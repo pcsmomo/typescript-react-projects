@@ -44,4 +44,11 @@ export const ChildAsFC: React.FC<ChildProps> = ({ color }) => {};
 // 3. 'Child' will receive props of type 'ChildProps'
 ```
 
+### 9. Annotations with Children
+
+```js
+export const ChildAsFC: React.FC<ChildProps> = ({ color }) => {};
+// React.FC accepts children without type define
+```
+
 </details>
