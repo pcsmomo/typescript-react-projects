@@ -1,6 +1,6 @@
 const EventComponent: React.FC = () => {
-  const onChange = (e) => {
-    console.log(e);
+  const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    console.log(event);
   };
 
   return (
