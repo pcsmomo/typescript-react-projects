@@ -11,6 +11,8 @@ React and Typescript: Build a Portfolio Project by Stephen Grider
 <details open> 
   <summary>Click to Contract/Expend</summary>
 
+## Section 1: React with Typescript
+
 ### 4. Generating TypeScript-Enabled Projects
 
 ```sh
