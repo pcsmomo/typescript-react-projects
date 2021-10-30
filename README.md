@@ -51,4 +51,6 @@ export const ChildAsFC: React.FC<ChildProps> = ({ color }) => {};
 // React.FC accepts children without type define
 ```
 
+## Section 3: Types Around Events and Refs
+
 </details>
