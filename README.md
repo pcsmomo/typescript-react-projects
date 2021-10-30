@@ -28,4 +28,20 @@ Two Big Checks By TypeScript
 1. Parent: Are we providing the correct props to Child when we show it in Parent?
 2. Child: Are we using the correctly named + typed props in Child?
 
+### 8. Explicit Component Type Annotations
+
+React Component Properties
+
+1. propTypes
+2. displayName
+3. defaultProps
+4. contextTypes
+
+```js
+export const ChildAsFC: React.FC<ChildProps> = ({ color }) => {};
+// 1. 'Child' will be a React function component
+// 2. 'Child' might have properties assigned to it like 'propTypes' and 'contextTypes'
+// 3. 'Child' will receive props of type 'ChildProps'
+```
+
 </details>
