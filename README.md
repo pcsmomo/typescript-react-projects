@@ -53,4 +53,10 @@ export const ChildAsFC: React.FC<ChildProps> = ({ color }) => {};
 
 ## Section 3: Types Around Events and Refs
 
+### 19. Applying Types to Refs
+
+```js
+const inputRef = (useRef < HTMLInputElement) | (null > null);
+```
+
 </details>
