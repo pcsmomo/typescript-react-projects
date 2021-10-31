@@ -77,4 +77,11 @@ npm install --save axios react-redux redux redux-thunk
 npm install --save-dev @types/react-redux
 ```
 
+### 23. Redux Store Design
+
+[NPM Search API](https://registry.npmjs.org/-/v1/search?text=react)
+
+> We will create redux/index.ts as an end point, \
+> and to prevent connecting to all different reducers/actions and so on
+
 </details>
