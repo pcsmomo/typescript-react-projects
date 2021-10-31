@@ -84,4 +84,14 @@ npm install --save-dev @types/react-redux
 > We will create redux/index.ts as an end point, \
 > and to prevent connecting to all different reducers/actions and so on
 
+### 28. Applying Action Interfaces
+
+```js
+// Type Guard
+if (action.type === 'search_repositories_success') {
+  // 100% certainty that 'action' satisfies the
+  // SearchRepositoriesSuccessAction interface
+}
+```
+
 </details>
