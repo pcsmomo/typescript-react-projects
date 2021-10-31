@@ -67,4 +67,14 @@ const inputRef = (useRef < HTMLInputElement) | (null > null);
 npx create-react-app 04-redux-ts --template typescript
 ```
 
+### 22. Project Setup
+
+Taking a new branch redux-ts-latest-packages to install latest packages
+
+```sh
+# npm install --save-exact @types/react-redux@7.1.15 axios@0.21.1 react-redux@7.2.2 redux@4.0.5 redux-thunk@2.3.0
+npm install --save axios react-redux redux redux-thunk
+npm install --save-dev @types/react-redux
+```
+
 </details>
