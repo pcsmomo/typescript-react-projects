@@ -59,4 +59,12 @@ export const ChildAsFC: React.FC<ChildProps> = ({ color }) => {};
 const inputRef = (useRef < HTMLInputElement) | (null > null);
 ```
 
+## Section 4: Typescript with Redux
+
+### 21. App Overview
+
+```sh
+npx create-react-app 04-redux-ts --template typescript
+```
+
 </details>
