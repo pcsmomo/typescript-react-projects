@@ -94,4 +94,38 @@ if (action.type === 'search_repositories_success') {
 }
 ```
 
+### 31. Adding Action Creators
+
+Since TypeScript 4.4, errors are automatically cast as unknown\
+https://stackoverflow.com/questions/60151181/object-is-of-type-unknown-typescript-generics
+
+```js
+// Error message: Object is of type 'unknown'.
+payload: err.message,
+```
+
+There are 2 ways to go
+
+1. Type guard
+
+   ```js
+   try {
+   } catch (err) {
+     let errorMessage = 'Failed to do something exceptional';
+     if (err instanceof Error) errorMessage = err.message;
+
+     dispatch({
+       type: ActionType.SEARCH_REPOSITORIES_ERROR,
+       payload: errorMessage,
+     });
+   }
+   ```
+
+2. Change tsconfig.json option
+   ```json
+   {
+     "useUnknownInCatchVariables": false
+   }
+   ```
+
 </details>
