@@ -180,4 +180,43 @@ export const useTypedSelector: TypedUseSelectorHook<RootState> = useSelector;
 - Transpiler: Babel
 - Budnler: Webpack
 
+### 50. Behind the Scenes with Webpack
+
+```sh
+mkdir bundler
+npm init -y
+npm install --save-exact webpack@5.11.1 webpack-cli@4.3.0
+
+npm run build
+```
+
+```json
+// inline-source-map: just not to
+{
+  "build": "webpack --mode=development --devtool=inline-source-map"
+}
+```
+
+```js
+// ./dist/main.js
+var webpack_modules = {
+  './src/message.js': (module) => {
+    module.exports = 'Hi there';
+  },
+};
+function webpack_require(moduleId) {
+  var moduleFn = webpack_modules[moduleId];
+  // Create a new module
+  var module = { exports: {} };
+  // Execute the module function
+  moduleFn(module);
+  // Return the exports of the module
+  return module.exports;
+}
+
+// ./src/index.js
+const message = webpack_require('./src/message.js');
+console.log(message);
+```
+
 </details>
