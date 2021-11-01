@@ -4,7 +4,8 @@ React and Typescript: Build a Portfolio Project by Stephen Grider
 
 ## Fodler structure
 
-1. 01-rts : React TypeScript
+1. 01-rts: React TypeScript
+2. 04-redux-ts: Redux
 
 # Details
 
@@ -154,5 +155,13 @@ export const useTypedSelector: TypedUseSelectorHook<RootState> = useSelector;
 
 > I think this is where I gave up when I tried to learn this course 7 months ago for the first time. \
 > Fortunately, I'm dealing it better this time.
+
+## Section 5: The Big App - Here's What We're Building!
+
+### 46. Three Big Challenges
+
+1. Code will be provided to Preview as a string. We have to execute it safely.
+2. This code might have advanced JS syntax in it (like JSX) that your browser can't execute.
+3. The code might have import statements for other JS files or CSS. We have to deal with those import statements before executing the code.
 
 </details>
