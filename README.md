@@ -164,4 +164,11 @@ export const useTypedSelector: TypedUseSelectorHook<RootState> = useSelector;
 2. This code might have advanced JS syntax in it (like JSX) that your browser can't execute.
 3. The code might have import statements for other JS files or CSS. We have to deal with those import statements before executing the code.
 
+## Section 6: Code Transpiling in the Browser
+
+### 47. Transpiling Options
+
+1. React App (Code) <-> Backend API Server (Transpiled Code)
+2. React App; In-Browser Transpiler (Code <-> Transpiled Result)
+
 </details>
