@@ -240,7 +240,7 @@ the `./dist/main.js` looks different from the commonjs one.
          - [NpmInstallWebpackPlugin](https://v4.webpack.js.org/plugins/npm-install-webpack-plugin/)
       4. Bundle complete!
    3. Bundled Code to React App
-2. Bundling option #2: better solution
+2. Bundling option #2: better solution than option #1
    1. React App -> code to Backend API Server
    2. Backend API Server
       1. (same)
@@ -256,5 +256,23 @@ the `./dist/main.js` looks different from the commonjs one.
       3. We write plugin to fetch individual file from npm
          - NPM registry
       4. Bundle complete!
+
+### 54. So Which Approach?
+
+Transpiling/Bundling Remotely or Locally?
+
+1. Remote: Backend API Server
+   1. We can cache downloaded NPM modules to bundle code faster
+   2. Will work better for users with slow devices or limited internet connections
+2. Local: React App
+   1. Removes an extra request to the API server
+      - faster code execution!
+   2. We don't have to maintain an API server!
+   3. Less complexity
+      - no moving code back and forth
+
+We are going with option #3: Everything in the React App
+
+> One small problem: Webpack doesn't work in the browser...
 
 </details>
