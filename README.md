@@ -228,4 +228,33 @@ Change the commonjs syntax to ES module syntax import/export \
 `npm run build` \
 the `./dist/main.js` looks different from the commonjs one.
 
+### 53. Options for Bundling
+
+1. Bundling Option #1: it doesn't seem quite right
+   1. React App -> code to Backend API Server
+   2. Backend API Server
+      1. Webpack Runs
+      2. Webpack finds missing module
+      3. npm install pluging gets module
+         - NPM registry
+         - [NpmInstallWebpackPlugin](https://v4.webpack.js.org/plugins/npm-install-webpack-plugin/)
+      4. Bundle complete!
+   3. Bundled Code to React App
+2. Bundling option #2: better solution
+   1. React App -> code to Backend API Server
+   2. Backend API Server
+      1. (same)
+      2. Webpack finds an import statement
+      3. We write plugin to fetch individual file from npm
+         - NPM registry
+      4. (same)
+   3. (same)
+3. Bundling option #3: same as option #2, but only in React App
+   1. React App
+      1. Webpack Runs
+      2. Webpack finds an import statement
+      3. We write plugin to fetch individual file from npm
+         - NPM registry
+      4. Bundle complete!
+
 </details>
