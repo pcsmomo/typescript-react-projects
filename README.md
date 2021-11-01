@@ -186,8 +186,6 @@ export const useTypedSelector: TypedUseSelectorHook<RootState> = useSelector;
 mkdir bundler
 npm init -y
 npm install --save-exact webpack@5.11.1 webpack-cli@4.3.0
-
-npm run build
 ```
 
 ```json
@@ -195,6 +193,11 @@ npm run build
 {
   "build": "webpack --mode=development --devtool=inline-source-map"
 }
+```
+
+```sh
+npm run build
+# The code is written in 'commonjs'
 ```
 
 ```js
@@ -218,5 +221,11 @@ function webpack_require(moduleId) {
 const message = webpack_require('./src/message.js');
 console.log(message);
 ```
+
+### 51. Webpack with ES Modules
+
+Change the commonjs syntax to ES module syntax import/export \
+`npm run build` \
+the `./dist/main.js` looks different from the commonjs one.
 
 </details>
