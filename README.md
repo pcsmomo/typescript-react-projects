@@ -171,4 +171,13 @@ export const useTypedSelector: TypedUseSelectorHook<RootState> = useSelector;
 1. React App (Code) <-> Backend API Server (Transpiled Code)
 2. React App; In-Browser Transpiler (Code <-> Transpiled Result)
 
+### 49. Module Systems
+
+1. AMD: define(['dep'], (dep) => {});
+2. common js: require/module.exports
+3. ES Modules: import/export
+
+- Transpiler: Babel
+- Budnler: Webpack
+
 </details>
