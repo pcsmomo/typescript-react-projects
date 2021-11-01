@@ -128,4 +128,16 @@ There are 2 ways to go
    }
    ```
 
+### 41. Awkward Typings Around React-Redux
+
+- [Redux Style Guide: Use Static Typing](https://redux.js.org/style-guide/style-guide#use-static-typing)
+- [Redux: Static Typing](https://react-redux.js.org/using-react-redux/usage-with-typescript#define-root-state-and-dispatch-types)
+
+```js
+// 04-redux-ts/src/state/reducers/index.ts
+export type RootState = ReturnType<typeof reducers>;
+```
+
+To let TypeScirpt know the type of the Root State when using _useSelector_
+
 </details>
