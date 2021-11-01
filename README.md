@@ -2,10 +2,14 @@
 
 React and Typescript: Build a Portfolio Project by Stephen Grider
 
-## Fodler structure
+## Folder structure
 
 1. 01-rts: React TypeScript
 2. 04-redux-ts: Redux
+3. 06-code-transpiling
+   - bundler: to observe main.js file after Webpack bundling
+4. 07-esbuild
+   - jbook-demo-app: a demo app using esbuild
 
 # Details
 
@@ -274,5 +278,23 @@ Transpiling/Bundling Remotely or Locally?
 We are going with option #3: Everything in the React App
 
 > One small problem: Webpack doesn't work in the browser...
+
+### 55. A Webpack Replacement
+
+Babel (Works in the browser) + Webpack (Doesn't work) \
+-> ESBuild : ESBuild can transpile + bundle our code - all in the browser!
+
+- [ESBuild - Github](https://github.com/evanw/esbuild)
+- [ESBuild - Homepage](https://esbuild.github.io/)
+
+ESBuild is significantly fast!
+
+## Section 7: Implementing In-Browser Bundling
+
+### 56. A Demo App
+
+```sh
+npx create-react-app jbook --template typescript
+```
 
 </details>
