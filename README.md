@@ -140,4 +140,19 @@ export type RootState = ReturnType<typeof reducers>;
 
 To let TypeScirpt know the type of the Root State when using _useSelector_
 
+### 42. Creating a Typed Selector
+
+[Redux: Defin Typed Hooks](https://react-redux.js.org/using-react-redux/usage-with-typescript#define-typed-hooks)
+
+```js
+// 04-redux-ts/src/hooks/useTypedSelector.ts
+export const useTypedSelector: TypedUseSelectorHook<RootState> = useSelector;
+```
+
+> Some of these libraries make TypeScript integration unnecessarily difficult.\
+> But we have to deal with it in the javascript world.
+
+> I think this is where I gave up when I tried to learn this course 7 months ago for the first time. \
+> Fortunately, I'm dealing it better this time.
+
 </details>
