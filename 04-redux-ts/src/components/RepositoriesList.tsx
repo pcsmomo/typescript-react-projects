@@ -5,7 +5,7 @@ import { useActions } from '../hooks/useActions';
 const RepositoriesList = () => {
   const [term, setTerm] = useState('');
   const { searchRepositories } = useActions();
-  const { data, loading, error } = useTypedSelector(
+  const { data, error, loading } = useTypedSelector(
     (state) => state.repositories
   );
 
@@ -22,6 +22,9 @@ const RepositoriesList = () => {
         <input value={term} onChange={(e) => setTerm(e.target.value)} />
         <button>Search</button>
       </form>
+      {error && <h3>{error}</h3>}
+      {loading && <h3>Loading...</h3>}
+      {!error && !loading && data.map((name) => <div key={name}>{name}</div>)}
     </div>
   );
 };
