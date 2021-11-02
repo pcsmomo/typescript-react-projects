@@ -317,4 +317,8 @@ npm install --save esbuild-wasm
 Copy esbuild.wasm to my work directory
 `cp 07-esbuild/jbook-demo-app/node_modules/esbuild-wasm/esbuild.wasm 07-esbuild/jbook-demo-app/public`
 
+### 61. Using Refs for Arbitrary Values
+
+[ESBuild - Running in the browser](https://esbuild.github.io/api/#running-in-the-browser)
+
 </details>
