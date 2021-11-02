@@ -303,6 +303,7 @@ npx create-react-app jbook --template typescript
 # npm install --save-exact esbuild-wasm@0.8.27
 # wasm: Web Assembly
 npm install --save esbuild-wasm
+# "esbuild-wasm": "^0.13.12",
 ```
 
 ### 59. Understanding ESBuild
@@ -322,5 +323,11 @@ Copy esbuild.wasm to my work directory\
 ### 62. Transpiling Works!
 
 [ESBuild - Transform API](https://esbuild.github.io/api/#transform-api)
+
+### 63. Troubles with Bundling in the Browser
+
+ESBuild will look at the file system and find the modules first.\
+But we are running esbuild in the browser, so it cannot find the modules there.\
+-> We need to write plugin to fetch individual file(=module) from npm
 
 </details>
