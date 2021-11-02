@@ -312,13 +312,15 @@ npm install --save esbuild-wasm
 - We installed `esbuild-wasm` which is esbuild web assembly.
 - This WASM(web assembly) binary has Go Lang bundler which complies to work in the browser
 
-[ESBuild - Transform API](https://esbuild.github.io/api/#transform-api)
-
-Copy esbuild.wasm to my work directory
+Copy esbuild.wasm to my work directory\
 `cp 07-esbuild/jbook-demo-app/node_modules/esbuild-wasm/esbuild.wasm 07-esbuild/jbook-demo-app/public`
 
 ### 61. Using Refs for Arbitrary Values
 
 [ESBuild - Running in the browser](https://esbuild.github.io/api/#running-in-the-browser)
+
+### 62. Transpiling Works!
+
+[ESBuild - Transform API](https://esbuild.github.io/api/#transform-api)
 
 </details>

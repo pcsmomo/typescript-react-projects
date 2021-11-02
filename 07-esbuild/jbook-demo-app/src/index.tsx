@@ -20,13 +20,18 @@ const App = () => {
     startService();
   }, []);
 
-  const onClick = () => {
+  const onClick = async () => {
     if (!ref.current) {
       console.log('ESBuild is not yet initialized');
       return;
     }
 
-    console.log(ref.current);
+    const result = await esbuild.transform(input, {
+      loader: 'jsx',
+      target: 'es2015',
+    });
+
+    setCode(result.code);
   };
 
   return (
