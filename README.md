@@ -297,4 +297,11 @@ ESBuild is significantly fast!
 npx create-react-app jbook --template typescript
 ```
 
+### 57. Project Setup
+
+```sh
+# npm install --save-exact esbuild-wasm@0.8.27
+npm install --save esbuild-wasm
+```
+
 </details>
