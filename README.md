@@ -301,7 +301,20 @@ npx create-react-app jbook --template typescript
 
 ```sh
 # npm install --save-exact esbuild-wasm@0.8.27
+# wasm: Web Assembly
 npm install --save esbuild-wasm
 ```
+
+### 59. Understanding ESBuild
+
+- ESBuild is built in Go language
+- So how this pakcage understans my javascript code?
+- We installed `esbuild-wasm` which is esbuild web assembly.
+- This WASM(web assembly) binary has Go Lang bundler which complies to work in the browser
+
+[ESBuild - Transform API](https://esbuild.github.io/api/#transform-api)
+
+Copy esbuild.wasm to my work directory
+`cp 07-esbuild/jbook-demo-app/node_modules/esbuild-wasm/esbuild.wasm 07-esbuild/jbook-demo-app/public`
 
 </details>
