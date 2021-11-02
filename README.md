@@ -10,6 +10,7 @@ React and Typescript: Build a Portfolio Project by Stephen Grider
    - bundler: to observe main.js file after Webpack bundling
 4. 07-esbuild
    - jbook-demo-app: a demo app using esbuild
+   - react-17.0.2-package: https://registry.npmjs.org/react/-/react-17.0.2.tgz
 
 # Details
 
@@ -329,5 +330,16 @@ Copy esbuild.wasm to my work directory\
 ESBuild will look at the file system and find the modules first.\
 But we are running esbuild in the browser, so it cannot find the modules there.\
 -> We need to write plugin to fetch individual file(=module) from npm
+
+### 64. Issues with NPM
+
+```sh
+npm view react dist.tarball
+# https://registry.npmjs.org/react/-/react-17.0.2.tgz
+# This address is where you reach when `npm install`
+```
+
+Download react-17.0.2.tgz, uncompress and have a look.\
+`./07-esbuild/react-17.0.2.package`
 
 </details>
