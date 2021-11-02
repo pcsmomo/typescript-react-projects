@@ -342,4 +342,13 @@ npm view react dist.tarball
 Download react-17.0.2.tgz, uncompress and have a look.\
 `./07-esbuild/react-17.0.2.package`
 
+### 65. Solution with Unpkg
+
+Directly fetching npm package would cause a CORS error.\
+(It didn't come to me though unlike the lecture shows)
+
+So we can use UNPKG
+
+[UNPKG - download npm package](https://unpkg.com/)
+
 </details>
