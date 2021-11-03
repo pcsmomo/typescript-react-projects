@@ -353,6 +353,8 @@ So we can use UNPKG
 
 ### 68. Deep Dive on Bundling
 
+[ESBuild Plugins - DOC](https://esbuild.github.io/plugins/)
+
 ESBuild Bundling Process
 
 1. onResolve step: Figure out where the index.js file is stored
@@ -360,5 +362,31 @@ ESBuild Bundling Process
 3. Parse the index.js file, find any import/require/exports
 4. onResolve step: If there are any import/require/exports, figure out where the requested file is
 5. onLoad step: Attmept to load that file up
+
+## Section 8: Dynamic Fetching and Loading of NPM Modules
+
+### 71. Dynamically Fetching Modules
+
+```sh
+npm install --save axios
+```
+
+```js
+// The result includes both commonjs and ES modules
+// So it's quite long
+return {
+  contents: `
+      import message from 'tiny-test-pkg';
+      console.log(message);
+   `,
+};
+// Change to commonjs
+return {
+  contents: `
+      const message = require('tiny-test-pkg');
+      console.log(message);
+   `,
+};
+```
 
 </details>
