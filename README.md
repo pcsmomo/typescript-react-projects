@@ -2,9 +2,15 @@
 
 React and Typescript: Build a Portfolio Project by Stephen Grider
 
-## Fodler structure
+## Folder structure
 
-1. 01-rts : React TypeScript
+1. 01-rts: React TypeScript
+2. 04-redux-ts: Redux
+3. 06-code-transpiling
+   - bundler: to observe main.js file after Webpack bundling
+4. 07-esbuild
+   - jbook-demo-app: a demo app using esbuild
+   - react-17.0.2-package: https://registry.npmjs.org/react/-/react-17.0.2.tgz
 
 # Details
 
@@ -154,5 +160,195 @@ export const useTypedSelector: TypedUseSelectorHook<RootState> = useSelector;
 
 > I think this is where I gave up when I tried to learn this course 7 months ago for the first time. \
 > Fortunately, I'm dealing it better this time.
+
+## Section 5: The Big App - Here's What We're Building!
+
+### 46. Three Big Challenges
+
+1. Code will be provided to Preview as a string. We have to execute it safely.
+2. This code might have advanced JS syntax in it (like JSX) that your browser can't execute.
+3. The code might have import statements for other JS files or CSS. We have to deal with those import statements before executing the code.
+
+## Section 6: Code Transpiling in the Browser
+
+### 47. Transpiling Options
+
+1. React App (Code) <-> Backend API Server (Transpiled Code)
+2. React App; In-Browser Transpiler (Code <-> Transpiled Result)
+
+### 49. Module Systems
+
+1. AMD: define(['dep'], (dep) => {});
+2. common js: require/module.exports
+3. ES Modules: import/export
+
+- Transpiler: Babel
+- Budnler: Webpack
+
+### 50. Behind the Scenes with Webpack
+
+```sh
+mkdir bundler
+npm init -y
+npm install --save-exact webpack@5.11.1 webpack-cli@4.3.0
+```
+
+```json
+// inline-source-map: just not to
+{
+  "build": "webpack --mode=development --devtool=inline-source-map"
+}
+```
+
+```sh
+npm run build
+# The code is written in 'commonjs'
+```
+
+```js
+// ./dist/main.js
+var webpack_modules = {
+  './src/message.js': (module) => {
+    module.exports = 'Hi there';
+  },
+};
+function webpack_require(moduleId) {
+  var moduleFn = webpack_modules[moduleId];
+  // Create a new module
+  var module = { exports: {} };
+  // Execute the module function
+  moduleFn(module);
+  // Return the exports of the module
+  return module.exports;
+}
+
+// ./src/index.js
+const message = webpack_require('./src/message.js');
+console.log(message);
+```
+
+### 51. Webpack with ES Modules
+
+Change the commonjs syntax to ES module syntax import/export \
+`npm run build` \
+the `./dist/main.js` looks different from the commonjs one.
+
+### 53. Options for Bundling
+
+1. Bundling Option #1: it doesn't seem quite right
+   1. React App -> code to Backend API Server
+   2. Backend API Server
+      1. Webpack Runs
+      2. Webpack finds missing module
+      3. npm install pluging gets module
+         - NPM registry
+         - [NpmInstallWebpackPlugin](https://v4.webpack.js.org/plugins/npm-install-webpack-plugin/)
+      4. Bundle complete!
+   3. Bundled Code to React App
+2. Bundling option #2: better solution than option #1
+   1. React App -> code to Backend API Server
+   2. Backend API Server
+      1. (same)
+      2. Webpack finds an import statement
+      3. We write plugin to fetch individual file from npm
+         - NPM registry
+      4. (same)
+   3. (same)
+3. Bundling option #3: same as option #2, but only in React App
+   1. React App
+      1. Webpack Runs
+      2. Webpack finds an import statement
+      3. We write plugin to fetch individual file from npm
+         - NPM registry
+      4. Bundle complete!
+
+### 54. So Which Approach?
+
+Transpiling/Bundling Remotely or Locally?
+
+1. Remote: Backend API Server
+   1. We can cache downloaded NPM modules to bundle code faster
+   2. Will work better for users with slow devices or limited internet connections
+2. Local: React App
+   1. Removes an extra request to the API server
+      - faster code execution!
+   2. We don't have to maintain an API server!
+   3. Less complexity
+      - no moving code back and forth
+
+We are going with option #3: Everything in the React App
+
+> One small problem: Webpack doesn't work in the browser...
+
+### 55. A Webpack Replacement
+
+Babel (Works in the browser) + Webpack (Doesn't work) \
+-> ESBuild : ESBuild can transpile + bundle our code - all in the browser!
+
+- [ESBuild - Github](https://github.com/evanw/esbuild)
+- [ESBuild - Homepage](https://esbuild.github.io/)
+
+ESBuild is significantly fast!
+
+## Section 7: Implementing In-Browser Bundling
+
+### 56. A Demo App
+
+```sh
+npx create-react-app jbook --template typescript
+```
+
+### 57. Project Setup
+
+```sh
+# npm install --save-exact esbuild-wasm@0.8.27
+# wasm: Web Assembly
+npm install --save esbuild-wasm
+# "esbuild-wasm": "^0.13.12",
+```
+
+### 59. Understanding ESBuild
+
+- ESBuild is built in Go language
+- So how this pakcage understans my javascript code?
+- We installed `esbuild-wasm` which is esbuild web assembly.
+- This WASM(web assembly) binary has Go Lang bundler which complies to work in the browser
+
+Copy esbuild.wasm to my work directory\
+`cp 07-esbuild/jbook-demo-app/node_modules/esbuild-wasm/esbuild.wasm 07-esbuild/jbook-demo-app/public`
+
+### 61. Using Refs for Arbitrary Values
+
+[ESBuild - Running in the browser](https://esbuild.github.io/api/#running-in-the-browser)
+
+### 62. Transpiling Works!
+
+[ESBuild - Transform API](https://esbuild.github.io/api/#transform-api)
+
+### 63. Troubles with Bundling in the Browser
+
+ESBuild will look at the file system and find the modules first.\
+But we are running esbuild in the browser, so it cannot find the modules there.\
+-> We need to write plugin to fetch individual file(=module) from npm
+
+### 64. Issues with NPM
+
+```sh
+npm view react dist.tarball
+# https://registry.npmjs.org/react/-/react-17.0.2.tgz
+# This address is where you reach when `npm install`
+```
+
+Download react-17.0.2.tgz, uncompress and have a look.\
+`./07-esbuild/react-17.0.2.package`
+
+### 65. Solution with Unpkg
+
+Directly fetching npm package would cause a CORS error.\
+(It didn't come to me though unlike the lecture shows)
+
+So we can use UNPKG
+
+[UNPKG - download npm package](https://unpkg.com/)
 
 </details>
