@@ -394,4 +394,8 @@ return {
 Test with a different package https://unpkg.com/medium-test-pkg \
 -> it tries to import https://unpkg.com/./utils, but not https://unpkg.com/medium-test-pkg/utils
 
+### 74. Solving Relative Paths
+
+Use `new URL()`
+
 </details>

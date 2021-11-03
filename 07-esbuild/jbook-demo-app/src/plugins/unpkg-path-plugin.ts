@@ -6,11 +6,21 @@ export const unpkgPathPlugin = () => {
     name: 'unpkg-path-plugin',
     setup(build: esbuild.PluginBuild) {
       build.onResolve({ filter: /.*/ }, async (args: any) => {
+        // 1. Entry file
         console.log('onResolve', args);
         if (args.path === 'index.js') {
           return { path: args.path, namespace: 'a' };
         }
 
+        // 3. Nested requires
+        if (args.path.includes('./') || args.path.includes('../')) {
+          return {
+            namespace: 'a',
+            path: new URL(args.path, args.importer + '/').href,
+          };
+        }
+
+        // 2. Requires in index.js
         return {
           namespace: 'a',
           path: `https://unpkg.com/${args.path}`,
