@@ -351,4 +351,14 @@ So we can use UNPKG
 
 [UNPKG - download npm package](https://unpkg.com/)
 
+### 68. Deep Dive on Bundling
+
+ESBuild Bundling Process
+
+1. onResolve step: Figure out where the index.js file is stored
+2. onLoad step: Attempt to load up the index.js file
+3. Parse the index.js file, find any import/require/exports
+4. onResolve step: If there are any import/require/exports, figure out where the requested file is
+5. onLoad step: Attmept to load that file up
+
 </details>
