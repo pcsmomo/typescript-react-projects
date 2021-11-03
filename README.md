@@ -389,4 +389,9 @@ return {
 };
 ```
 
+### 73. Issues with Multi-File Packages
+
+Test with a different package https://unpkg.com/medium-test-pkg \
+-> it tries to import https://unpkg.com/./utils, but not https://unpkg.com/medium-test-pkg/utils
+
 </details>
