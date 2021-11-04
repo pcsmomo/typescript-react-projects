@@ -403,4 +403,14 @@ Use `new URL()`
 Test with a different package https://unpkg.com/nested-test-pkg \
 -> index.js and all other files are under ./src
 
+### 77. Resolving Nested Paths
+
+[URL - MDN](https://developer.mozilla.org/en-US/docs/Web/API/URL/URL)
+
+```js
+// Both are the same
+new URL('./', 'https://unpkg.com/nested-test-pkg@1.0.0/src/index.js');
+new URL('.', 'https://unpkg.com/nested-test-pkg@1.0.0/src/index.js');
+```
+
 </details>
