@@ -419,7 +419,7 @@ new URL('.', 'https://unpkg.com/nested-test-pkg@1.0.0/src/index.js');
 
 ### 82. Implementing a Caching Layer
 
-**IndexedDB**
+**IndexedDB** : we need to store large amount of data
 
 [Difference between localStorage and indexedDB](https://softwareengineering.stackexchange.com/questions/219953/how-is-localstorage-different-from-indexeddb)
 
