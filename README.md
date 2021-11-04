@@ -417,4 +417,30 @@ new URL('.', 'https://unpkg.com/nested-test-pkg@1.0.0/src/index.js');
 
 ### 81. Crazy Numbers of Requests
 
+### 82. Implementing a Caching Layer
+
+**IndexedDB**
+
+[Difference between localStorage and indexedDB](https://softwareengineering.stackexchange.com/questions/219953/how-is-localstorage-different-from-indexeddb)
+
+- localStorage : Web Storage
+  - smaller amount of data
+  - synchronous API
+  - very simple to use
+- indexedDB
+  - larger amount of data
+  - both synchronous and an asynchronouse API
+  - more complicated to use
+
+Additionally,
+
+1. In a few situations, like Service Workers, you cannot use blocking code, hence, you cannot use localStorage, and must use something like indexedDB.
+2. The API for indexedDB is complex and tedious (I'd go so far as to say "horrific", YMMV). There are several "wrapper" libraries to simplify the API, I strongly suggest that you look at those.
+
+[npm localforage - make it easy to use IndexedDB](https://www.npmjs.com/package/localforage)
+
+```sh
+npm install --save localforage
+```
+
 </details>
