@@ -398,4 +398,9 @@ Test with a different package https://unpkg.com/medium-test-pkg \
 
 Use `new URL()`
 
+### 76. Failing Nested Requires
+
+Test with a different package https://unpkg.com/nested-test-pkg \
+-> index.js and all other files are under ./src
+
 </details>
