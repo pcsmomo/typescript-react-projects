@@ -413,4 +413,8 @@ new URL('./', 'https://unpkg.com/nested-test-pkg@1.0.0/src/index.js');
 new URL('.', 'https://unpkg.com/nested-test-pkg@1.0.0/src/index.js');
 ```
 
+## Section 9: Caching For Big Performance Gains
+
+### 81. Crazy Numbers of Requests
+
 </details>
