@@ -455,4 +455,15 @@ import 'bulma/css/bulma.css';
 
 [ESBuild - CSS](https://esbuild.github.io/content-types/#css)
 
+### 95. A Better Way of Loading WASM
+
+```js
+// To Test
+import 'tiny-test-pkg';
+import 'medium-test-pkg';
+import 'nested-test-pkg';
+import 'react';
+import 'bulma/css/bulma.css';
+```
+
 </details>
