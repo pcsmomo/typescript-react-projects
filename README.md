@@ -508,4 +508,13 @@ document.querySelector('iframe').contentWindow.b;
 <iframe sandbox="allow-same-origin" src="/test.html" />
 ```
 
+### 103. Breaking Access with Different Domains
+
+```sh
+# /etc/hosts
+127.0.0.1 nothing.localhost
+```
+
+> Cannot communicate between different domain names
+
 </details>
