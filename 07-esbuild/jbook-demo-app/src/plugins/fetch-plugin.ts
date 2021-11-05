@@ -35,22 +35,27 @@ export const fetchPlugin = (inputCode: string) => {
 
         const fileType = args.path.match(/.css$/) ? 'css' : 'jsx';
 
+        // Handle CSS data to inline line
+        const escaped = data
+          .replace(/\n/g, '')
+          .replace(/"/g, '\\"')
+          .replace(/'/, "\\'");
+
         const contents =
           fileType === 'css'
             ? `
             const style = document.createElement('style');
-            style.innerText = 'body { background-color: "red" }';
+            style.innerText = '${escaped}';
             document.head.appendChild(style);
           `
             : data;
-
-        console.log(data);
 
         const result: esbuild.OnLoadResult = {
           loader: 'jsx',
           contents: contents,
           resolveDir: new URL('./', request.responseURL).pathname,
         };
+
         // store response in cache
         await fileCache.setItem(args.path, result);
 
