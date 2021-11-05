@@ -443,4 +443,16 @@ Additionally,
 npm install --save localforage
 ```
 
+### 88. Loading CSS Files
+
+https://unpkg.com/bulma
+
+```js
+import 'bulma/css/bulma.css';
+```
+
+### 89. Configuring the Correct Loader
+
+[ESBuild - CSS](https://esbuild.github.io/content-types/#css)
+
 </details>
