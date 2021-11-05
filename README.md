@@ -9,8 +9,10 @@ React and Typescript: Build a Portfolio Project by Stephen Grider
 3. 06-code-transpiling
    - bundler: to observe main.js file after Webpack bundling
 4. 07-esbuild
-   - jbook-demo-app: a demo app using esbuild
+   - jbook: a demo app using esbuild
    - react-17.0.2-package: https://registry.npmjs.org/react/-/react-17.0.2.tgz
+5. 10-untrusted-code-execution
+   - jbook: extended from last lecture
 
 # Details
 
@@ -480,6 +482,19 @@ try {
 setTimeout(() => {
   console.asdlfkad();
 }, 100);
+```
+
+### 100. Different Execution Context
+
+The current setting of our iframe _allow_ communication between the parent and the child
+
+```js
+// on Child, access to parent
+window.a; // X
+parent.a; // O
+
+// on Parent, access to child
+document.querySelector('iframe').contentWindow.b;
 ```
 
 </details>
