@@ -398,4 +398,72 @@ Test with a different package https://unpkg.com/medium-test-pkg \
 
 Use `new URL()`
 
+### 76. Failing Nested Requires
+
+Test with a different package https://unpkg.com/nested-test-pkg \
+-> index.js and all other files are under ./src
+
+### 77. Resolving Nested Paths
+
+[URL - MDN](https://developer.mozilla.org/en-US/docs/Web/API/URL/URL)
+
+```js
+// Both are the same
+new URL('./', 'https://unpkg.com/nested-test-pkg@1.0.0/src/index.js');
+new URL('.', 'https://unpkg.com/nested-test-pkg@1.0.0/src/index.js');
+```
+
+## Section 9: Caching For Big Performance Gains
+
+### 81. Crazy Numbers of Requests
+
+### 82. Implementing a Caching Layer
+
+**IndexedDB** : we need to store large amount of data
+
+[Difference between localStorage and indexedDB](https://softwareengineering.stackexchange.com/questions/219953/how-is-localstorage-different-from-indexeddb)
+
+- localStorage : Web Storage
+  - smaller amount of data
+  - synchronous API
+  - very simple to use
+- indexedDB
+  - larger amount of data
+  - both synchronous and an asynchronouse API
+  - more complicated to use
+
+Additionally,
+
+1. In a few situations, like Service Workers, you cannot use blocking code, hence, you cannot use localStorage, and must use something like indexedDB.
+2. The API for indexedDB is complex and tedious (I'd go so far as to say "horrific", YMMV). There are several "wrapper" libraries to simplify the API, I strongly suggest that you look at those.
+
+[npm localforage - make it easy to use IndexedDB](https://www.npmjs.com/package/localforage)
+
+```sh
+npm install --save localforage
+```
+
+### 88. Loading CSS Files
+
+https://unpkg.com/bulma
+
+```js
+import 'bulma/css/bulma.css';
+```
+
+### 89. Configuring the Correct Loader
+
+[ESBuild - CSS](https://esbuild.github.io/content-types/#css)
+
+### 95. A Better Way of Loading WASM
+
+```js
+// To Test
+import 'tiny-test-pkg';
+import 'medium-test-pkg';
+import 'nested-test-pkg';
+import 'react';
+import 'bulma/css/bulma.css';
+```
+
 </details>
