@@ -33,10 +33,22 @@ export const fetchPlugin = (inputCode: string) => {
         // console.log(request);
         // console.log(new URL('./', request.responseURL).pathname);
 
-        const loader = args.path.match(/.css$/) ? 'css' : 'jsx';
+        const fileType = args.path.match(/.css$/) ? 'css' : 'jsx';
+
+        const contents =
+          fileType === 'css'
+            ? `
+            const style = document.createElement('style');
+            style.innerText = 'body { background-color: "red" }';
+            document.head.appendChild(style);
+          `
+            : data;
+
+        console.log(data);
+
         const result: esbuild.OnLoadResult = {
-          loader,
-          contents: data,
+          loader: 'jsx',
+          contents: contents,
           resolveDir: new URL('./', request.responseURL).pathname,
         };
         // store response in cache
