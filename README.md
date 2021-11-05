@@ -517,4 +517,12 @@ document.querySelector('iframe').contentWindow.b;
 
 > Cannot communicate between different domain names
 
+### 104. How Do IFrames Fix Anything?
+
+Solutions!
+
+load iframe with different domain name.\
+All online coding platforms such as codepen.io, codesandbox.io do the same.\
+Then the executed code from iframe cannot manipulate the main frame working on.
+
 </details>
