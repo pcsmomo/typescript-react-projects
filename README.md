@@ -497,4 +497,15 @@ parent.a; // O
 document.querySelector('iframe').contentWindow.b;
 ```
 
+### 102. Sandboxing an IFrame
+
+[IFrame sandbox - MDN](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe#attr-sandbox)
+
+```html
+<!-- Block direct communication -->
+<iframe sandbox="" src="/test.html" />
+<!-- Allow direct communication -->
+<iframe sandbox="allow-same-origin" src="/test.html" />
+```
+
 </details>

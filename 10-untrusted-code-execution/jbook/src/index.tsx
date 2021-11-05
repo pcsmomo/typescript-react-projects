@@ -62,7 +62,7 @@ const App = () => {
         <button onClick={onClick}>Submit</button>
       </div>
       <pre>{code}</pre>
-      <iframe src="/test.html" />
+      <iframe sandbox="allow-same-origin" src="/test.html" />
     </div>
   );
 };
