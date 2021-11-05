@@ -49,6 +49,13 @@ const App = () => {
     // console.log(result);
 
     setCode(result.outputFiles[0].text);
+
+    // This could cause an error
+    try {
+      eval(result.outputFiles[0].text);
+    } catch (err) {
+      alert(err);
+    }
   };
 
   return (
@@ -56,6 +63,7 @@ const App = () => {
       <textarea
         value={input}
         onChange={(e) => setInput(e.target.value)}
+        style={{ width: 500, height: 200 }}
       ></textarea>
       <div>
         <button onClick={onClick}>Submit</button>

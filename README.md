@@ -466,4 +466,20 @@ import 'react';
 import 'bulma/css/bulma.css';
 ```
 
+## Section 10: Safely Handling Untrusted Code Execution
+
+### 96. Executing User Code
+
+```js
+try {
+  eval(result.outputFiles[0].text);
+} catch (err) {
+  alert(err);
+}
+// code -> Error occured
+setTimeout(() => {
+  console.asdlfkad();
+}, 100);
+```
+
 </details>
