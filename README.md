@@ -546,13 +546,12 @@ There are two possible problems
 ### 111. Indirect Communication Between Frames
 
 This light communication is possible, even after we have disabled direct communication\
-But it will only work as the "message" event handler is pre-defined.
 
 ```js
-// on Parent side, in devTool console
+// on Client side, in devTool console
 // the 3rd argument is useCapture
 window.addEventListener('message', (event) => console.log(event), false);
-// on Child side
+// on Parent side
 parent.postMessage('hello there', '*');
 ```
 
