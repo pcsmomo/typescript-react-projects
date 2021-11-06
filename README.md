@@ -519,10 +519,17 @@ document.querySelector('iframe').contentWindow.b;
 
 ### 104. How Do IFrames Fix Anything?
 
-Solutions!
+Solution #1!
 
 load iframe with different domain name.\
 All online coding platforms such as codepen.io, codesandbox.io do the same.\
 Then the executed code from iframe cannot manipulate the main frame working on.
+
+### 107. Middle Ground Approach
+
+Solution #2, Chosen
+
+- Using sandbox="" property on `<iframe>`
+- Downsize is in-browser features suc as localStorage cannot be used in this case.
 
 </details>
