@@ -543,4 +543,19 @@ There are two possible problems
 1. if the code has `</script>`
 2. if the code is too long
 
+### 111. Indirect Communication Between Frames
+
+This light communication is possible, even after we have disabled direct communication\
+But it will only work as the "message" event handler is pre-defined.
+
+```js
+// on Parent side, in devTool console
+// the 3rd argument is useCapture
+window.addEventListener('message', (event) => console.log(event), false);
+// on Child side
+parent.postMessage('hello there', '*');
+```
+
+[Window.postMessage() - MDN](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage)
+
 </details>
