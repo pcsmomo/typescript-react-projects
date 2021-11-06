@@ -532,4 +532,8 @@ Solution #2, Chosen
 - Using sandbox="" property on `<iframe>`
 - Downsize is in-browser features suc as localStorage cannot be used in this case.
 
+### 108. IFrames with SrcDocs
+
+[iframe srcdoc - W3Schools](https://www.w3schools.com/tags/att_iframe_srcdoc.asp)
+
 </details>
