@@ -557,4 +557,19 @@ parent.postMessage('hello there', '*');
 
 [Window.postMessage() - MDN](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage)
 
+### 113. It Works!
+
+> As well as those react packages are cached,\
+> So it's quite fast!
+
+```js
+// Test typing and submit it!
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+const App = () => <h1>Hi there!</h1>;
+
+ReactDOM.render(<App />, document.querySelector('#root'));
+```
+
 </details>
