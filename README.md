@@ -586,4 +586,15 @@ document.body.innerHTML = '';
 
 ### 118. Issues with Eager Bundling
 
+```js
+// Every changes
+onChange={(e) => {
+  onClick(e.target.value);
+  setInput(e.target.value);
+}}
+```
+
+Observe Chrome -> More tools -> Task Manager -> Tab: React App \
+Whenever typing, the app uses tremendous resource like CPU and battery.
+
 </details>
