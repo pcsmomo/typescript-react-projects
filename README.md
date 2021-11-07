@@ -624,11 +624,14 @@ npm install --save @monaco-editor/react
 
 ```sh
 npm install --save monaco-editor
+# "monaco-editor": "^0.30.0",
 ```
 
 ```js
 // node_modules/monaco-editor/esm/vs/editor/editor.api.d.ts
 wordWrap?: 'off' | 'on' | 'wordWrapColumn' | 'bounded';
 ```
+
+[Monaco Editor API](https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.istandaloneeditorconstructionoptions.html)
 
 </details>
