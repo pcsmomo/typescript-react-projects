@@ -13,6 +13,8 @@ React and Typescript: Build a Portfolio Project by Stephen Grider
    - react-17.0.2-package: https://registry.npmjs.org/react/-/react-17.0.2.tgz
 5. 10-untrusted-code-execution
    - jbook: extended from last lecture
+6. 11-display-code-editor
+   - jbook: extended from last lecture
 
 # Details
 
@@ -579,5 +581,9 @@ ReactDOM.render(<App />, document.querySelector('#root'));
 // and it will cause an error in next execution
 document.body.innerHTML = '';
 ```
+
+## Section 11: Displaying a Code Editor in a React App
+
+### 118. Issues with Eager Bundling
 
 </details>
