@@ -620,4 +620,15 @@ npm install --save @monaco-editor/react
 
 > Let's try with the latest version
 
+### 123. Crazy Monaco Editor Type Defs
+
+```sh
+npm install --save monaco-editor
+```
+
+```js
+// node_modules/monaco-editor/esm/vs/editor/editor.api.d.ts
+wordWrap?: 'off' | 'on' | 'wordWrapColumn' | 'bounded';
+```
+
 </details>
