@@ -616,6 +616,8 @@ npm install --save @monaco-editor/react
 # "@monaco-editor/react": "^4.3.1",
 ```
 
+[npm @monaco-editor/react](https://www.npmjs.com/package/@monaco-editor/react)
+
 > Let's try with the latest version
 
 </details>
