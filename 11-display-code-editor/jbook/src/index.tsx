@@ -24,7 +24,7 @@ const App = () => {
     startService();
   }, []);
 
-  const onClick = async (input: string) => {
+  const onClick = async () => {
     if (!ref.current) {
       console.log('ESBuild is not yet initialized');
       return;
@@ -78,13 +78,12 @@ const App = () => {
     <div>
       <textarea
         value={input}
-        onChange={(e) => {
-          onClick(e.target.value);
-          setInput(e.target.value);
-        }}
+        onChange={(e) => setInput(e.target.value)}
         style={{ width: 500, height: 200 }}
       ></textarea>
-      <div>{/* <button onClick={onClick}>Submit</button> */}</div>
+      <div>
+        <button onClick={onClick}>Submit</button>
+      </div>
       {/* <pre>{code}</pre> */}
       <iframe
         title="preview"
