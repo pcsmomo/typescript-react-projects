@@ -8,7 +8,7 @@ const App = () => {
   const ref = useRef<any>(false);
   const iframe = useRef<any>(false);
   const [input, setInput] = useState('');
-  const [code, setCode] = useState('');
+  // const [code, setCode] = useState('');
 
   const startService = async () => {
     // old version, esbuild-wasm@0.8.27
@@ -84,8 +84,13 @@ const App = () => {
       <div>
         <button onClick={onClick}>Submit</button>
       </div>
-      <pre>{code}</pre>
-      <iframe ref={iframe} sandbox="allow-scripts" srcDoc={html} />
+      {/* <pre>{code}</pre> */}
+      <iframe
+        title="preview"
+        ref={iframe}
+        sandbox="allow-scripts"
+        srcDoc={html}
+      />
     </div>
   );
 };
