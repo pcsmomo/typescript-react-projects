@@ -30,6 +30,8 @@ const App = () => {
       return;
     }
 
+    iframe.current.srcdoc = html;
+
     // const result = await esbuild.transform(input, {
     //   loader: 'jsx',
     //   target: 'es2015',

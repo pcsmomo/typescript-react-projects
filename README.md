@@ -572,4 +572,12 @@ const App = () => <h1>Hi there!</h1>;
 ReactDOM.render(<App />, document.querySelector('#root'));
 ```
 
+### 115. Issues with Repeat Execution
+
+```js
+// If I execute this one, the <div id="root"></div> will be removed,
+// and it will cause an error in next execution
+document.body.innerHTML = '';
+```
+
 </details>
