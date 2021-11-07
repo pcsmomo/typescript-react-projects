@@ -597,4 +597,25 @@ onChange={(e) => {
 Observe Chrome -> More tools -> Task Manager -> Tab: React App \
 Whenever typing, the app uses tremendous resource like CPU and battery.
 
+### 120. Open Source Editor Options
+
+1. [CodeMirror](https://codemirror.net/)
+   - Super easy to use
+   - Doesn't have as many out-of-the-box features
+2. [Ace Editor](https://ace.c9.io/)
+   - Moderately easy to use
+   - Widely used
+3. [\*Monaco Editor - We will use this](https://microsoft.github.io/monaco-editor/)
+   - It's being used in VSCODE
+   - Hardest to setup
+   - Gives an almost-perfect editing experience immediately
+
+```sh
+# npm install --save-exact @monaco-editor/react@3.7.5
+npm install --save @monaco-editor/react
+# "@monaco-editor/react": "^4.3.1",
+```
+
+> Let's try with the latest version
+
 </details>
