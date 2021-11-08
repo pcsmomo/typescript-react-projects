@@ -640,4 +640,10 @@ wordWrap?: 'off' | 'on' | 'wordWrapColumn' | 'bounded';
 npm install --save prettier @types/prettier
 ```
 
+### 130. Adding a CSS Library
+
+```sh
+npm install --save bulmaswatch
+```
+
 </details>
