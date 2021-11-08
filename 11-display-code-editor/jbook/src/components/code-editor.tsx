@@ -1,6 +1,8 @@
 import { useRef } from 'react';
 import MonacoEditor from '@monaco-editor/react';
 import * as monaco from 'monaco-editor/esm/vs/editor/editor.api';
+import prettier from 'prettier';
+import parser from 'prettier/parser-babel';
 
 interface CodeEditorProps {
   initialValue: string;
@@ -29,25 +31,34 @@ const CodeEditor: React.FC<CodeEditorProps> = ({ onChange, initialValue }) => {
   //   }
   // };
 
+  const onFormatClick = () => {
+    // get current value from editor
+    // format that value
+    // set the formatted value back in the editor
+  };
+
   return (
-    <MonacoEditor
-      onMount={handleEditorDidMount}
-      // onChange={handleEditorChange}
-      defaultValue={initialValue}
-      defaultLanguage="javascript"
-      theme="vs-dark"
-      height="300px"
-      options={{
-        wordWrap: 'on',
-        minimap: { enabled: false },
-        showUnused: false,
-        folding: false,
-        lineNumbersMinChars: 3,
-        fontSize: 16,
-        scrollBeyondLastLine: false,
-        automaticLayout: true,
-      }}
-    />
+    <div>
+      <button onClick={onFormatClick}>Format</button>
+      <MonacoEditor
+        onMount={handleEditorDidMount}
+        // onChange={handleEditorChange}
+        defaultValue={initialValue}
+        defaultLanguage="javascript"
+        theme="vs-dark"
+        height="300px"
+        options={{
+          wordWrap: 'on',
+          minimap: { enabled: false },
+          showUnused: false,
+          folding: false,
+          lineNumbersMinChars: 3,
+          fontSize: 16,
+          scrollBeyondLastLine: false,
+          automaticLayout: true,
+        }}
+      />
+    </div>
   );
 };
 

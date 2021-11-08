@@ -634,4 +634,10 @@ wordWrap?: 'off' | 'on' | 'wordWrapColumn' | 'bounded';
 
 [Monaco Editor API](https://microsoft.github.io/monaco-editor/api/interfaces/monaco.editor.istandaloneeditorconstructionoptions.html)
 
+### 128. Adding Prettier to Our Editor
+
+```sh
+npm install --save prettier @types/prettier
+```
+
 </details>
