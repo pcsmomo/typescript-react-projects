@@ -1,14 +1,25 @@
 import './code-editor.css';
+import './syntax.css';
 import { useRef } from 'react';
 import MonacoEditor from '@monaco-editor/react';
 import * as monaco from 'monaco-editor/esm/vs/editor/editor.api';
 import prettier from 'prettier';
-import parser from 'prettier/parser-babel';
+import prettierParser from 'prettier/parser-babel';
+import { parse } from '@babel/parser';
+import traverse from '@babel/traverse';
+import Highlighter from 'monaco-jsx-highlighter';
 
 interface CodeEditorProps {
   initialValue: string;
   onChange(value: string): void;
 }
+
+// Minimal Babel setup for React JSX parsing:
+const babelParse = (code: string) =>
+  parse(code, {
+    sourceType: 'module',
+    plugins: ['jsx'],
+  });
 
 const CodeEditor: React.FC<CodeEditorProps> = ({ onChange, initialValue }) => {
   const editorRef = useRef<any>(null);
@@ -25,6 +36,33 @@ const CodeEditor: React.FC<CodeEditorProps> = ({ onChange, initialValue }) => {
     });
 
     editorRef.current.getModel()?.updateOptions({ tabSize: 2 });
+
+    const highlighter = new Highlighter(
+      // @ts-ignore
+      window.monaco,
+      babelParse,
+      traverse,
+      editorRef.current
+    );
+
+    // Activate highlighting
+    //   highlightOnDidChangeModelContent(
+    //     debounceTime = 100,
+    //     afterHighlight = ast => ast,
+    //     onHighlightError = error => console.error(error),
+    //     getAstPromise,
+    //     onParseAstError = error => console.log(error),
+    //  )
+    highlighter.highLightOnDidChangeModelContent(
+      100,
+      () => {},
+      () => {},
+      undefined,
+      () => {}
+    );
+
+    // Activate JSX commenting
+    highlighter.addJSXCommentCommand();
   }
 
   // Way 2. to handle change value
@@ -42,7 +80,7 @@ const CodeEditor: React.FC<CodeEditorProps> = ({ onChange, initialValue }) => {
     const formatted = prettier
       .format(unformatted, {
         parser: 'babel',
-        plugins: [parser],
+        plugins: [prettierParser],
         useTabs: false,
         semi: true,
         singleQuote: true,

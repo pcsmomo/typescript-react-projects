@@ -646,4 +646,37 @@ npm install --save prettier @types/prettier
 npm install --save bulmaswatch
 ```
 
+### 132. Fixing Syntax Highlighting
+
+```sh
+# npm install --save-exact monaco-jsx-highlighter@0.0.15 jscodeshift@0.11.0 @types/jscodeshift@0.7.2
+
+# from monaco-jsx-highlighter@1.x
+npm install --save monaco-jsx-highlighter @babel/parser @babel/traverse
+# "monaco-jsx-highlighter": "^1.1.8",
+# "@babel/parser": "^7.16.2",
+# "@babel/traverse": "^7.16.0",
+```
+
+[npm monaco-jsx-highlighter](https://www.npmjs.com/package/monaco-jsx-highlighter)
+
+#### Faking typescript(?)
+
+'monaco-jsx-highlighter' pakcage doesn't have type definitions as it is comparably small and not popular package.\
+So we could locally declare that module in `src/types.d.ts` not to get error
+
+```js
+// test code
+const a = 1;
+
+const App = () => {
+  return (
+    <div>
+      <h1>test</h1>
+      <button onClick={() => console.log('click')}>Click Me</button>
+    </div>
+  );
+};
+```
+
 </details>
