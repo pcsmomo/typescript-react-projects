@@ -687,9 +687,16 @@ Organize folder structure
 
 ### 138. Adding Resizable Panes
 
+[npm react-resizable](https://www.npmjs.com/package/react-resizable)
+
 ```sh
-# npm install --save-exact react-resizable@1.11.0
-npm install --save-exact react-resizable@1.11.0
+# npm install --save-exact react-resizable@1.11.0 @types/react-resizable@1.7.2
+npm install --save react-resizable @types/react-resizable
+# "react-resizable": "^3.0.4",
+# "@types/react-resizable": "^1.7.4",
 ```
+
+- <Resizable> : raw component with tons of customizable options
+- \*<ResizableBox> : simple use-cases
 
 </details>
