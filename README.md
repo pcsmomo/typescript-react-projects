@@ -679,4 +679,17 @@ const App = () => {
 };
 ```
 
+## Section 12: How to Extract Reusable Components
+
+Organize folder structure
+
+## Section 13: Draggable Resizing Components
+
+### 138. Adding Resizable Panes
+
+```sh
+# npm install --save-exact react-resizable@1.11.0
+npm install --save-exact react-resizable@1.11.0
+```
+
 </details>
