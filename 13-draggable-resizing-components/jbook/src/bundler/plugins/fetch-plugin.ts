@@ -39,7 +39,7 @@ export const fetchPlugin = (inputCode: string) => {
         const escaped = data
           .replace(/\n/g, '')
           .replace(/"/g, '\\"')
-          .replace(/'/, "\\'");
+          .replace(/'/g, "\\'");
 
         const contents = `
             const style = document.createElement('style');
