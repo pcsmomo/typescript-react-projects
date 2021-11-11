@@ -713,4 +713,12 @@ useEffect(() => {
 
 ## Section 14: Techniques for Error Handling in React Apps
 
+### 168. Plan for the Text Cell
+
+```sh
+# npm install --save-exact @uiw/react-md-editor@2.1.1
+npm install --save @uiw/react-md-editor
+# "@uiw/react-md-editor": "^3.6.6",
+```
+
 </details>
