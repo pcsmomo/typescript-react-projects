@@ -711,4 +711,6 @@ useEffect(() => {
 }, []);
 ```
 
+## Section 14: Techniques for Error Handling in React Apps
+
 </details>
