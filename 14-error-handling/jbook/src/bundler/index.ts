@@ -31,9 +31,16 @@ export const bundle = async (rawCode: string) => {
       },
     });
 
-    return result.outputFiles[0].text;
-  } catch (error) {
-    console.log(error);
-    return 'not yet initialized';
+    return { code: result.outputFiles[0].text, err: '' };
+  } catch (err) {
+    let errorMessage = 'Failed to do something exceptional';
+    if (err instanceof Error) {
+      errorMessage = err.message;
+    }
+
+    return {
+      code: '',
+      err: errorMessage,
+    };
   }
 };
