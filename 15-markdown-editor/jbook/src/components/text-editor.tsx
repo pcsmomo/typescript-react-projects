@@ -8,6 +8,7 @@ const TextEditor: React.FC = () => {
   const [editing, setEditing] = useState(false);
 
   useEffect(() => {
+    // Add linstener to check mouse clicking inside/ouside MDEditor
     const listener = (event: MouseEvent) => {
       if (
         ref.current &&
@@ -29,14 +30,14 @@ const TextEditor: React.FC = () => {
 
   if (editing) {
     return (
-      <div ref={ref}>
+      <div className="text-editor" ref={ref}>
         <MDEditor value={value} onChange={setValue} />
       </div>
     );
   }
 
   return (
-    <div onClick={() => setEditing(true)}>
+    <div className="text-editor" onClick={() => setEditing(true)}>
       <MDEditor.Markdown source={value} />
     </div>
   );
