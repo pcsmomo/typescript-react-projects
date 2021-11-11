@@ -721,4 +721,6 @@ npm install --save @uiw/react-md-editor
 # "@uiw/react-md-editor": "^3.6.6",
 ```
 
+[npm react-md-editor](https://www.npmjs.com/package/@uiw/react-md-editor)
+
 </details>
