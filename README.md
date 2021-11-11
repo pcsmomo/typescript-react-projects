@@ -723,4 +723,21 @@ npm install --save @uiw/react-md-editor
 
 [npm react-md-editor](https://www.npmjs.com/package/@uiw/react-md-editor)
 
+### 171. Conditional Toggling
+
+To check clicking inside or outside specific element
+
+```tsx
+const ref = useRef<HTMLDivElement | null>(null);
+if (ref.current && event.target && ref.current.contains(event.target as Node)) {
+  console.log('element clicked on is inside editor');
+  return;
+}
+return (
+  <div ref={ref}>
+    <MDEditor value={value} onChange={setValue} />
+  </div>
+);
+```
+
 </details>
