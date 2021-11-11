@@ -679,4 +679,38 @@ const App = () => {
 };
 ```
 
+## Section 12: How to Extract Reusable Components
+
+Organize folder structure
+
+## Section 13: Draggable Resizing Components
+
+### 138. Adding Resizable Panes
+
+[npm react-resizable](https://www.npmjs.com/package/react-resizable)
+
+```sh
+# npm install --save-exact react-resizable@1.11.0 @types/react-resizable@1.7.2
+npm install --save react-resizable @types/react-resizable
+# "react-resizable": "^3.0.4",
+# "@types/react-resizable": "^1.7.4",
+```
+
+- <Resizable> : raw component with tons of customizable options
+- \*<ResizableBox> : simple use-cases
+
+### 154. On Resize Events
+
+[React - Effect with Cleanup](https://reactjs.org/docs/hooks-effect.html#example-using-hooks-1)
+
+```js
+useEffect(() => {
+  return () => {
+    window.removeEventListener('resize', listener);
+  };
+}, []);
+```
+
+## Section 14: Techniques for Error Handling in React Apps
+
 </details>
