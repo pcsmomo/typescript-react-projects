@@ -1,6 +1,13 @@
-/* It is already fixed in @uiw/react-md-editor@3.6.6  */
+/* These already fixed in @uiw/react-md-editor@3.6.6  */
+
+/* 1. Fix cursor position */
 /* .w-md-editor .title {
   line-height: unset !important;
   font-size: unset !important;
   font-weight: unset !important;
+} */
+
+/* 2. Fix divider height */
+/* .w-md-editor .ul {
+  line-height: 1;
 } */
