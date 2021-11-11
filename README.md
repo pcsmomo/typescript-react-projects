@@ -699,4 +699,16 @@ npm install --save react-resizable @types/react-resizable
 - <Resizable> : raw component with tons of customizable options
 - \*<ResizableBox> : simple use-cases
 
+### 154. On Resize Events
+
+[React - Effect with Cleanup](https://reactjs.org/docs/hooks-effect.html#example-using-hooks-1)
+
+```js
+useEffect(() => {
+  return () => {
+    window.removeEventListener('resize', listener);
+  };
+}, []);
+```
+
 </details>
