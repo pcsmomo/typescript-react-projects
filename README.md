@@ -13,8 +13,7 @@ React and Typescript: Build a Portfolio Project by Stephen Grider
    - react-17.0.2-package: https://registry.npmjs.org/react/-/react-17.0.2.tgz
 5. 10-untrusted-code-execution
    - jbook: extended from last lecture
-6. 11-display-code-editor
-   - jbook: extended from last lecture
+6. After that, all directories have jbook copied from the previous section
 
 # Details
 
@@ -739,5 +738,31 @@ return (
   </div>
 );
 ```
+
+## Section 16: Design Patterns for Redux with Typescript
+
+### 180. Redux Design
+
+```sh
+# npm install --save-exact @types/react-redux@7.1.15 react-redux@7.2.2 redux@4.0.5 redux-thunk@2.3.0 axios@0.21.1
+npm install --save @types/react-redux react-redux redux redux-thunk axios
+# "@types/react-redux": "^7.1.20",
+# "react-redux": "^7.2.6",
+# "redux": "^4.1.2",
+# "redux-thunk": "^2.4.0",
+# "axios": "^0.24.0",
+```
+
+### 190. Handling Cyclical Imports
+
+- state
+
+  - action-creators: actual actions
+  - action-types: types
+  - actions: all interfaces and extra types
+    - (extra types can be located other new files but not in action-creators)
+  - reducers
+
+  - cells.ts: interfaces and types for cells
 
 </details>
