@@ -740,4 +740,18 @@ return (
 );
 ```
 
+## Section 16: Design Patterns for Redux with Typescript
+
+### 180. Redux Design
+
+```sh
+# npm install --save-exact @types/react-redux@7.1.15 react-redux@7.2.2 redux@4.0.5 redux-thunk@2.3.0 axios@0.21.1
+npm install --save @types/react-redux react-redux redux redux-thunk axios
+# "@types/react-redux": "^7.1.20",
+# "react-redux": "^7.2.6",
+# "redux": "^4.1.2",
+# "redux-thunk": "^2.4.0",
+# "axios": "^0.24.0",
+```
+
 </details>
