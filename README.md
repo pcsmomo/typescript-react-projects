@@ -765,4 +765,12 @@ npm install --save @types/react-redux react-redux redux redux-thunk axios
 
   - cells.ts: interfaces and types for cells
 
+### 197. Small Gotcha with Immer
+
+Immer with pure javascript, return is not necessary in redux,\
+but with typescript we'd better return state for type casting \
+(not to get undefined case)
+
+> However, I am still getting undefined somehow..
+
 </details>

@@ -1,4 +1,3 @@
-import { orderedListCommand } from '@uiw/react-md-editor';
 import produce from 'immer';
 import { ActionType } from '../action-types';
 import { Action } from '../actions';
@@ -26,7 +25,7 @@ const reducer = produce((state: CellsState = initialState, action: Action) => {
       const { id, content } = action.payload;
 
       state.data[id].content = content;
-      return;
+      return state;
     case ActionType.DELETE_CELL: {
       // 1. delete data
       delete state.data[action.payload];
@@ -47,7 +46,7 @@ const reducer = produce((state: CellsState = initialState, action: Action) => {
 
       // validate
       if (targetIndex < 0 || targetIndex > state.order.length - 1) {
-        return;
+        return state;
       }
 
       // swap
