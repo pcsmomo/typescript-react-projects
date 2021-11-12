@@ -713,4 +713,31 @@ useEffect(() => {
 
 ## Section 14: Techniques for Error Handling in React Apps
 
+### 168. Plan for the Text Cell
+
+```sh
+# npm install --save-exact @uiw/react-md-editor@2.1.1
+npm install --save @uiw/react-md-editor
+# "@uiw/react-md-editor": "^3.6.6",
+```
+
+[npm react-md-editor](https://www.npmjs.com/package/@uiw/react-md-editor)
+
+### 171. Conditional Toggling
+
+To check clicking inside or outside specific element
+
+```tsx
+const ref = useRef<HTMLDivElement | null>(null);
+if (ref.current && event.target && ref.current.contains(event.target as Node)) {
+  console.log('element clicked on is inside editor');
+  return;
+}
+return (
+  <div ref={ref}>
+    <MDEditor value={value} onChange={setValue} />
+  </div>
+);
+```
+
 </details>
