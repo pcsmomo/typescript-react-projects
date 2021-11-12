@@ -56,11 +56,34 @@ const reducer = produce((state: CellsState = initialState, action: Action) => {
 
       return state;
     }
-    case ActionType.INSERT_CELL_BEFORE:
+    case ActionType.INSERT_CELL_BEFORE: {
+      // insert data
+      const cell: Cell = {
+        content: '',
+        type: action.payload.type,
+        id: randomId(),
+      };
+      state.data[cell.id] = cell;
+
+      // insert order
+      const index = state.order.findIndex((id) => id === action.payload.id);
+
+      if (index < 0) {
+        // if id is null, adding to the very end of the order array
+        state.order.push(cell.id);
+      } else {
+        state.order.splice(index, 0, cell.id);
+      }
+
       return state;
+    }
     default:
       return state;
   }
 });
+
+const randomId = () => {
+  return Math.random().toString(36).substring(2, 7);
+};
 
 export default reducer;
