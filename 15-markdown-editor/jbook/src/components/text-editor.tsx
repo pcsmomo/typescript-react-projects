@@ -4,8 +4,8 @@ import MDEditor from '@uiw/react-md-editor';
 
 const TextEditor: React.FC = () => {
   const ref = useRef<HTMLDivElement | null>(null);
-  const [value, setValue] = useState<string | undefined>('# Header');
   const [editing, setEditing] = useState(false);
+  const [value, setValue] = useState('# Header');
 
   useEffect(() => {
     // Add linstener to check mouse clicking inside/ouside MDEditor
@@ -31,7 +31,7 @@ const TextEditor: React.FC = () => {
   if (editing) {
     return (
       <div className="text-editor" ref={ref}>
-        <MDEditor value={value} onChange={setValue} />
+        <MDEditor value={value} onChange={(v) => setValue(v || '')} />
       </div>
     );
   }
