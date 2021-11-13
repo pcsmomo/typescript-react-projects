@@ -771,6 +771,36 @@ Immer with pure javascript, return is not necessary in redux,\
 but with typescript we'd better return state for type casting \
 (not to get undefined case)
 
-> However, I am still getting undefined somehow..
+> However, I am still getting undefined somehow..\
+> (gave initialState as the second argument to produce(,initialState)) -> Solved
+
+### 200. Creating a Typed Selector
+
+[Define Typed Hooks - React Redux](https://react-redux.js.org/using-react-redux/usage-with-typescript#define-typed-hooks)
+
+```js
+// It is the official pattern to use selector as a hook.
+import { useSelector, TypedUseSelectorHook } from 'react-redux';
+export const useTypedSelector: TypedUseSelectorHook<RootState> = useSelector;
+const cells = useTypedSelector(({ cells: { order, data } }) =>
+  order.map((id) => data[id])
+);
+```
+
+```js
+// implement directly
+import { useDispatch } from 'react-redux';
+import { actionCreators } from '../state';
+const dispatch = useDispatch();
+dispatch(actionCreators.updateCell('abcd', 'efgh'));
+// ⬇️⬇️⬇️
+// use a hook
+export const useActions = () => {
+  const dispatch = useDispatch();
+  return bindActionCreators(actionCreators, dispatch);
+};
+const { updateCell } = useActions();
+updateCell('abcd', 'efgh');
+```
 
 </details>
