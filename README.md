@@ -774,6 +774,8 @@ but with typescript we'd better return state for type casting \
 > However, I am still getting undefined somehow..\
 > (gave initialState as the second argument to produce(,initialState)) -> Solved
 
+## Section 18: Binding React with Redux
+
 ### 200. Creating a Typed Selector
 
 [Define Typed Hooks - React Redux](https://react-redux.js.org/using-react-redux/usage-with-typescript#define-typed-hooks)
@@ -801,6 +803,17 @@ export const useActions = () => {
 };
 const { updateCell } = useActions();
 updateCell('abcd', 'efgh');
+```
+
+### 208. Adding Icon Buttons
+
+```sh
+npm install --save @fortawesome/fontawesome-free
+```
+
+```js
+// import only file we need
+import '@fortawesome/fontawesome-free/css/all.min.css';
 ```
 
 </details>
