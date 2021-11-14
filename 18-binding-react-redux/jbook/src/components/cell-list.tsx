@@ -23,7 +23,16 @@ const CellList: React.FC = () => {
   return (
     <div>
       {renderedCells}
-      <AddCell nextCellId={null} />
+      {/* Way 1 to handle style */}
+      {/* <div className={cells.length === 0 ? 'force-visible' : ''}>
+        <AddCell nextCellId={null} />
+      </div> */}
+
+      {/* Way 2 */}
+      {/* <AddCell style={{ opacity: 1 }} nextCellId={null} /> */}
+
+      {/* Way 3 */}
+      <AddCell forceVisible={cells.length === 0} nextCellId={null} />
     </div>
   );
 };
