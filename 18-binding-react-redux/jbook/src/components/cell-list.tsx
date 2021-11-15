@@ -15,8 +15,8 @@ const CellList: React.FC = () => {
 
   const renderedCells = cells.map((cell) => (
     <Fragment key={cell.id}>
-      <AddCell nextCellId={cell.id} />
       <CellListItem cell={cell} />
+      <AddCell previousCellId={cell.id} />
     </Fragment>
   ));
 
@@ -30,6 +30,8 @@ const CellList: React.FC = () => {
 
   return (
     <div>
+      {/* Way 3 */}
+      <AddCell forceVisible={cells.length === 0} previousCellId={null} />
       {renderedCells}
       {/* Way 1 to handle style */}
       {/* <div className={cells.length === 0 ? 'force-visible' : ''}>
@@ -38,9 +40,6 @@ const CellList: React.FC = () => {
 
       {/* Way 2 */}
       {/* <AddCell style={{ opacity: 1 }} nextCellId={null} /> */}
-
-      {/* Way 3 */}
-      <AddCell forceVisible={cells.length === 0} nextCellId={null} />
     </div>
   );
 };

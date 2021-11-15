@@ -816,4 +816,29 @@ npm install --save @fortawesome/fontawesome-free
 import '@fortawesome/fontawesome-free/css/all.min.css';
 ```
 
+### 221. Three Possible Solutions
+
+```html
+<!-- 1 -->
+.add-cell:active { opacity: 0 !important; transition: opacity 0s; }
+```
+
+```js
+// 2
+renderedCells.push(
+  <AddCell
+    key={Math.random()}
+    forceVisible={cells.length === 0}
+    nextCellId={null}
+  />
+);
+```
+
+### 222. Refactoring the React Side
+
+3. insert after
+   > Hmm.. it was about the key so react newly renders.\
+   > But with this fix, react doesn't render the current one \
+   > So the css transition won't behaviour weirdly.
+
 </details>
