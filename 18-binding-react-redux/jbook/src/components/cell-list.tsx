@@ -20,6 +20,14 @@ const CellList: React.FC = () => {
     </Fragment>
   ));
 
+  // renderedCells.push(
+  //   <AddCell
+  //     key={Math.random()}
+  //     forceVisible={cells.length === 0}
+  //     nextCellId={null}
+  //   />
+  // );
+
   return (
     <div>
       {renderedCells}
