@@ -55,7 +55,7 @@ const reducer = produce((state: CellsState = initialState, action: Action) => {
 
       break;
     }
-    case ActionType.INSERT_CELL_BEFORE: {
+    case ActionType.INSERT_CELL_AFTER: {
       // insert data
       const cell: Cell = {
         content: '',
@@ -69,9 +69,9 @@ const reducer = produce((state: CellsState = initialState, action: Action) => {
 
       if (index < 0) {
         // if id is null, adding to the very end of the order array
-        state.order.push(cell.id);
+        state.order.unshift(cell.id);
       } else {
-        state.order.splice(index, 0, cell.id);
+        state.order.splice(index + 1, 0, cell.id);
       }
 
       break;
