@@ -841,4 +841,10 @@ renderedCells.push(
    > But with this fix, react doesn't render the current one \
    > So the css transition won't behaviour weirdly.
 
+## Section 19: Connecting Bundles in Redux
+
+### 223. Should There Be a Bundles Reducer?
+
+Doesn't suggest to use useSelector for asynchrounous?
+
 </details>
