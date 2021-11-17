@@ -877,4 +877,27 @@ return useMemo(() => {
 //     actionCreators is imported out of scope. not "in the component" nor as "props"
 ```
 
+### 237. Fading In the Progress Bar
+
+It's a nice trick to not display the progress bar with a little delay.
+
+```css
+animation: fadeIn 0.5s;
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+```
+
+- Remove all package cache
+  - Chrome devTool -> Application -> IndexcedDB -> filecache -> keyvaluepaires -> delete all
+
 </details>
