@@ -847,4 +847,34 @@ renderedCells.push(
 
 Doesn't suggest to use useSelector for asynchrounous?
 
+### 231. Solving a Small Warning with useMemo
+
+```js
+useEffect(() => {
+  const timer = setTimeout(async () => {
+    createBundle(cell.id, cell.content);
+  }, 750);
+
+  return () => {
+    clearTimeout(timer);
+  };
+}, [cell.content, cell.id, createBundle]);
+// When add createBundle, it renders every 750ms (infinite loop)
+// Because of bindActionCreators, we always get a different version of createBundle
+
+// hooks/use-actions.ts
+return bindActionCreators(actionCreators, dispatch);
+
+// ⬇️⬇️⬇️
+// use useMemo
+import { useMemo } from 'react';
+return useMemo(() => {
+  return bindActionCreators(actionCreators, dispatch);
+}, [dispatch]);
+
+// takeaway 1. useMemo does almost kind of useState + useEffect
+// takeaway 2. [dispatch] declared in dependencies but why not actionCreators?
+//     actionCreators is imported out of scope. not "in the component" nor as "props"
+```
+
 </details>
