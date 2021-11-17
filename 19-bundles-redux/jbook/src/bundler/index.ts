@@ -2,7 +2,7 @@ import * as esbuild from 'esbuild-wasm';
 import { unpkgPathPlugin } from './plugins/unpkg-path-plugin';
 import { fetchPlugin } from './plugins/fetch-plugin';
 
-export const setupBundler = async () => {
+export const setupBundler = async (): Promise<boolean> => {
   try {
     // old version, esbuild-wasm@0.8.27
     // const service = await esbuild.startService({
@@ -13,8 +13,10 @@ export const setupBundler = async () => {
     });
 
     console.log('esbuild is initialized');
+    return Promise.resolve(true);
   } catch (err) {
     console.log(err);
+    return Promise.resolve(false);
   }
 };
 
