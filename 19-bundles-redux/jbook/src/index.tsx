@@ -1,5 +1,6 @@
 import 'bulmaswatch/superhero/bulmaswatch.min.css';
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import './index.css';
 import { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
@@ -21,8 +22,15 @@ const App = () => {
 
   return (
     <Provider store={store}>
-      {/* TODO: add loading message */}
-      {initialised && <CellList />}
+      {!initialised ? (
+        <div className="app-progress-cover">
+          <progress className="progress is-large is-info" max="100">
+            Loading
+          </progress>
+        </div>
+      ) : (
+        <CellList />
+      )}
     </Provider>
   );
 };
