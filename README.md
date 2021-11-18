@@ -900,4 +900,36 @@ animation: fadeIn 0.5s;
 - Remove all package cache
   - Chrome devTool -> Application -> IndexcedDB -> filecache -> keyvaluepaires -> delete all
 
+## Section 20: Adding a 'Cumulative Code Execution' Feature
+
+### 239. Referencing Code from Previous Cells
+
+Examples..
+
+```js
+import axios from 'axios';
+
+const fetchPosts = async () => {
+  const { data } = await axios.get('/posts');
+
+  return data;
+};
+```
+
+```js
+import React, { useEffect, useState } from 'react';
+import ReactDOM from 'react-dom';
+
+const App = () => {
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    fetchPosts().then(data => setPosts(data));
+  })
+  return <div>
+    {posts.map(p => p.title)}
+  <div>
+};
+```
+
 </details>
