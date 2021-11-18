@@ -932,4 +932,10 @@ const App = () => {
 };
 ```
 
+### 247. Avoiding Naming Collisions
+
+JSX element gets transpiled, it calls `React.createElement('h1', ...)`
+
+and esbuild is inteligent enough, to it won't `import React from 'react';` twice
+
 </details>
