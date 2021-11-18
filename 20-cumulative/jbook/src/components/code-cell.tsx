@@ -23,7 +23,11 @@ const CodeCell: React.FC<CodeCellProps> = ({ cell }) => {
     const cumulativeCode = [
       `
         const show = (value) => {
-          document.querySelector('#root').innerHTML = value;
+          if (typeof value === 'object') {
+            document.querySelector('#root').innerHTML = JSON.stringify(value);
+          } else {
+            document.querySelector('#root').innerHTML = value;
+          }
         }
       `,
     ];
@@ -38,7 +42,7 @@ const CodeCell: React.FC<CodeCellProps> = ({ cell }) => {
     return cumulativeCode;
   });
 
-  console.log(cumulativeCode);
+  // console.log(cumulativeCode);
 
   useEffect(() => {
     if (!bundle) {
