@@ -938,4 +938,12 @@ JSX element gets transpiled, it calls `React.createElement('h1', ...)`
 
 and esbuild is inteligent enough, to it won't `import React from 'react';` twice
 
+## Section 21: The Path - Lern
+
+### 255. Planning Local Architecture
+
+File containing all of these cells in a plain-text format (not in localStorage)
+
+We should be able to save (and load) a user's notebook to/from their hard drive
+
 </details>
