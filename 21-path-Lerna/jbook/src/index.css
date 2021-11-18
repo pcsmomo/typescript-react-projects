@@ -1,0 +1,7 @@
+.app-progress-cover {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  padding-left: 30%;
+  padding-right: 30%;
+}
