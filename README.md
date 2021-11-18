@@ -940,10 +940,21 @@ and esbuild is inteligent enough, to it won't `import React from 'react';` twice
 
 ## Section 21: The Path - Lern
 
-### 255. Planning Local Architecture
+### 254. The Path Moving Forward
 
 File containing all of these cells in a plain-text format (not in localStorage)
 
 We should be able to save (and load) a user's notebook to/from their hard drive
+
+### 255. Planning Local Architecture
+
+![structure](./resources/structure.jpg)
+
+1. User simplay type `npm jbook serve` to run this app (localhost:4050)
+2. It will go through CLI and run a local node js server
+3. Node API does 3 different jobs
+   1. serve create react app built
+   2. write and update notebook.js which contains all code-cell and so on
+   3. load notebook.js and send it to the front end gui
 
 </details>
