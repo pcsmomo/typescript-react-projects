@@ -1093,4 +1093,22 @@ npm start # to transpile typescript
 }
 ```
 
+### 267. Parallel Start Scripts
+
+```sh
+# ./jbook
+npm start
+# "start": "lerna run start --parallel"
+# run all lerna packages at the same time
+# cli, local-api, local-client, so we will see many logs in one terminal
+```
+
+```json
+// package.json
+{
+  "start": "tsc --watch --preserveWatchOutput"
+}
+// without --preserveWatchOutput, whenever typescript changes, all log messages will refreshed
+```
+
 </details>
