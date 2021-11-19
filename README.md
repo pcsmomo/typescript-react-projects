@@ -968,6 +968,9 @@ We should be able to save (and load) a user's notebook to/from their hard drive
 
 Learna CLI: Tool for managing a multi-package project
 
+> lerna stores only the link not the whole packages (if my understanding is correct) \
+> easier to manager
+
 ### 260. Disclaimer on Lerna
 
 - Learna
@@ -1006,5 +1009,38 @@ mv local-client jbook/packages
   - lerna.json
   - packages
     - local-client
+
+### 262. Adding Modules with Lerna
+
+```sh
+# cd ./21-path-lerna/jbook/packages
+mkdir cli
+cd cli
+npm init -y
+cd ..
+
+mkdir local-api
+cd local-api
+npm init -y
+```
+
+> When using lerna, we do not manually NPM install modules!
+
+```sh
+lerna add
+
+# Install babel-core in all modules
+lerna add babel-core
+
+# Install module-1 to module-2
+lerna add module-1 --scope=module-2
+```
+
+[lerna DOC](https://github.com/lerna/lerna)
+
+```sh
+# lerna add express --scope=cli
+lerna add commander --scope=cli
+```
 
 </details>
