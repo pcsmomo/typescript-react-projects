@@ -1117,6 +1117,13 @@ npm start
 
 ## Section 22: Creating the CLI
 
+To install packages
+
+- jbook/packages/cli: `lerna bootstrap`
+- jbook/packages/local-api: `lerna bootstrap`
+- jbook/packages/local-client: `npm install`
+- jbook: `npm start`
+
 ### 268. Reading Command Line Arguments
 
 ```sh
