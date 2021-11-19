@@ -968,6 +968,9 @@ We should be able to save (and load) a user's notebook to/from their hard drive
 
 Learna CLI: Tool for managing a multi-package project
 
+> lerna stores only the link not the whole packages (if my understanding is correct) \
+> easier to manager
+
 ### 260. Disclaimer on Lerna
 
 - Learna
@@ -975,5 +978,137 @@ Learna CLI: Tool for managing a multi-package project
 - NPM Workspaces
 - Bolt
 - Luigi
+
+### 261. Lerna Setup
+
+```sh
+# npm install -g --save-exact lerna@3.22.1
+npm install -g --save lerna
+# lerna@4.0.0
+# This could have breaking changes
+```
+
+The 'jbook' folder we have been working on will be a 'local-client' \
+and new 'jbook' folder willd have CLI, local-client, local-api, Etc.
+
+rename `jbook` to `local-client`
+
+```sh
+# cd ./21-path-lerna/
+mv jbook local-client
+mkdir jbook
+cd jbook
+lerna init
+cd ..
+mv local-client jbook/packages
+```
+
+#### Folder structure
+
+- jbook
+  - lerna.json
+  - packages
+    - local-client
+
+### 262. Adding Modules with Lerna
+
+```sh
+# cd ./21-path-lerna/jbook/packages
+mkdir cli
+cd cli
+npm init -y
+cd ..
+
+mkdir local-api
+cd local-api
+npm init -y
+```
+
+> When using lerna, we do not manually NPM install modules!
+
+```sh
+lerna add
+
+# Install babel-core in all modules
+lerna add babel-core
+
+# Install module-1 to module-2
+lerna add module-1 --scope=module-2
+```
+
+[lerna DOC](https://github.com/lerna/lerna)
+
+```sh
+# Becuase we use --scope, it does not matter where we run it from
+# lerna add express --scope=cli
+lerna add commander --scope=cli
+```
+
+### 263. Linking Packages
+
+```sh
+lerna add local-api --scope=cli
+# /jbook/packages/cli
+node index.js
+# Server started
+```
+
+> When index.js in local-api changes, it will adapted when run cli \
+> Because it is linked now
+> (No need to re-publish and re-install)
+
+### 264. Adding TypeScript Support
+
+```sh
+lerna add typescript --dev --scope=local-api
+# /jbook/packages/local-api
+tsc --init  # when typescript is installed globally
+# npx typescript --init  # when typescript is not installed globally
+npm start # to transpile typescript
+```
+
+```json
+// tsconfig.json
+{
+  "declaration": true /* Generate .d.ts files from TypeScript and JavaScript files in your project. */,
+  "outDir": "./dist" /* Specify an output folder for all emitted files. */
+}
+```
+
+### 265. Adding TypeScript to the CLI
+
+```sh
+# /jbook/packages/cli
+tsc --init  # when typescript is installed globally
+lerna add typescript --dev --scope=cli
+npm start # to transpile typescript
+```
+
+### 266. Finishing TS Support
+
+```json
+// tsconfig.json
+{
+  "outDir": "./dist" /* Specify an output folder for all emitted files. */
+}
+```
+
+### 267. Parallel Start Scripts
+
+```sh
+# ./jbook
+npm start
+# "start": "lerna run start --parallel"
+# run all lerna packages at the same time
+# cli, local-api, local-client, so we will see many logs in one terminal
+```
+
+```json
+// package.json
+{
+  "start": "tsc --watch --preserveWatchOutput"
+}
+// without --preserveWatchOutput, whenever typescript changes, all log messages will refreshed
+```
 
 </details>
