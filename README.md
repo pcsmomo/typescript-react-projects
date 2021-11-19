@@ -1039,8 +1039,22 @@ lerna add module-1 --scope=module-2
 [lerna DOC](https://github.com/lerna/lerna)
 
 ```sh
+# Becuase we use --scope, it does not matter where we run it from
 # lerna add express --scope=cli
 lerna add commander --scope=cli
 ```
+
+### 263. Linking Packages
+
+```sh
+lerna add local-api --scope=cli
+# /jbook/packages/cli
+node index.js
+# Server started
+```
+
+> When index.js in local-api changes, it will adapted when run cli \
+> Because it is linked now
+> (No need to re-publish and re-install)
 
 </details>
