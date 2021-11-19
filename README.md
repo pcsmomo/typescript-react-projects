@@ -981,11 +981,30 @@ Learna CLI: Tool for managing a multi-package project
 ```sh
 # npm install -g --save-exact lerna@3.22.1
 npm install -g --save lerna
+# lerna@4.0.0
+# This could have breaking changes
 ```
 
 The 'jbook' folder we have been working on will be a 'local-client' \
 and new 'jbook' folder willd have CLI, local-client, local-api, Etc.
 
 rename `jbook` to `local-client`
+
+```sh
+# cd ./21-path-lerna/
+mv jbook local-client
+mkdir jbook
+cd jbook
+lerna init
+cd ..
+mv local-client jbook/packages
+```
+
+#### Folder structure
+
+- jbook
+  - lerna.json
+  - packages
+    - local-client
 
 </details>
