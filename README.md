@@ -1074,4 +1074,12 @@ npm start # to transpile typescript
 }
 ```
 
+### 265. Adding TypeScript to the CLI
+
+```sh
+# /jbook/packages/cli
+tsc --init  # when typescript is installed globally
+npm start # to transpile typescript
+```
+
 </details>
