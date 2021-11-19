@@ -1057,4 +1057,13 @@ node index.js
 > Because it is linked now
 > (No need to re-publish and re-install)
 
+### 264. Adding TypeScript Support
+
+```sh
+lerna add typescript --dev --scope=local-api
+# /jbook/packages/local-api
+tsc --init  # when typescript is installed globally
+npx typescript --init  # when typescript is not installed globally
+```
+
 </details>
