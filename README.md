@@ -976,4 +976,16 @@ Learna CLI: Tool for managing a multi-package project
 - Bolt
 - Luigi
 
+### 261. Lerna Setup
+
+```sh
+# npm install -g --save-exact lerna@3.22.1
+npm install -g --save lerna
+```
+
+The 'jbook' folder we have been working on will be a 'local-client' \
+and new 'jbook' folder willd have CLI, local-client, local-api, Etc.
+
+rename `jbook` to `local-client`
+
 </details>
