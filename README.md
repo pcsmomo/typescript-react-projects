@@ -957,4 +957,23 @@ We should be able to save (and load) a user's notebook to/from their hard drive
    2. write and update notebook.js which contains all code-cell and so on
    3. load notebook.js and send it to the front end gui
 
+### 258. Package Based Development
+
+- CLI: jbook
+- Local Express API: @jbook/local-api
+- Public Express API: @jbook/public-api
+- React App: @jbook/local-client
+
+### 259. Introducing Lerna
+
+Learna CLI: Tool for managing a multi-package project
+
+### 260. Disclaimer on Lerna
+
+- Learna
+- Yarn Workspaces
+- NPM Workspaces
+- Bolt
+- Luigi
+
 </details>
