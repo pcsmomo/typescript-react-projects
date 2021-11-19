@@ -1068,6 +1068,7 @@ npm start # to transpile typescript
 ```
 
 ```json
+// tsconfig.json
 {
   "declaration": true /* Generate .d.ts files from TypeScript and JavaScript files in your project. */,
   "outDir": "./dist" /* Specify an output folder for all emitted files. */
@@ -1079,7 +1080,17 @@ npm start # to transpile typescript
 ```sh
 # /jbook/packages/cli
 tsc --init  # when typescript is installed globally
+lerna add typescript --dev --scope=cli
 npm start # to transpile typescript
+```
+
+### 266. Finishing TS Support
+
+```json
+// tsconfig.json
+{
+  "outDir": "./dist" /* Specify an output folder for all emitted files. */
+}
 ```
 
 </details>
