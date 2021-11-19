@@ -1063,7 +1063,15 @@ node index.js
 lerna add typescript --dev --scope=local-api
 # /jbook/packages/local-api
 tsc --init  # when typescript is installed globally
-npx typescript --init  # when typescript is not installed globally
+# npx typescript --init  # when typescript is not installed globally
+npm start # to transpile typescript
+```
+
+```json
+{
+  "declaration": true /* Generate .d.ts files from TypeScript and JavaScript files in your project. */,
+  "outDir": "./dist" /* Specify an output folder for all emitted files. */
+}
 ```
 
 </details>
