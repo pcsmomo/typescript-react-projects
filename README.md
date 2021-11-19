@@ -712,6 +712,8 @@ useEffect(() => {
 
 ## Section 14: Techniques for Error Handling in React Apps
 
+## Section 15: Creating a Markdown Editor in a React App
+
 ### 168. Plan for the Text Cell
 
 ```sh
@@ -752,6 +754,8 @@ npm install --save @types/react-redux react-redux redux redux-thunk axios
 # "redux-thunk": "^2.4.0",
 # "axios": "^0.24.0",
 ```
+
+## Section 17: Simplify State Updates with Immer
 
 ### 190. Handling Cyclical Imports
 
@@ -1110,5 +1114,36 @@ npm start
 }
 // without --preserveWatchOutput, whenever typescript changes, all log messages will refreshed
 ```
+
+## Section 22: Creating the CLI
+
+### 268. Reading Command Line Arguments
+
+```sh
+# Options in the future
+jbook serve
+jbook serve notebook.js
+jbook serve mynote.js --port 3050
+jbook serve --port 4050
+```
+
+```sh
+# console.log(process.argv);
+node test.js mynotes.js --port 3050
+# [
+#   '/Users/noah/.nvm/versions/node/v14.15.4/bin/node',
+#   '/Users/noah/Documents/Study/Study_codes/udemy/typescript-react-projects/typescript-react-projects-git/22-CLI/jbook/test.js',
+#   'mynotes.js',
+#   '--port',
+#   '3050'
+# ]
+node test.js mynotes.js --port=3050
+node test.js --port 3050 mynotes.js
+# We may need to consider all these command cases
+```
+
+npm commander can solve the problem!
+
+[commander.js - npm](https://www.npmjs.com/package/commander)
 
 </details>
