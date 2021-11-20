@@ -1211,6 +1211,8 @@ node index.js serve -p 4000
 
 ### 273. Calculating File Paths
 
+[Path - Node.js](https://nodejs.org/api/path.html)
+
 ```js
 process.cwd(); // Current Working Directory
 path.dirname();
@@ -1276,5 +1278,26 @@ npm run build
    - ```sh
      lerna add local-client --scope=local-api
      ```
+
+### 283. What's the Path
+
+[require.resolve() - Node.js](https://nodejs.org/api/modules.html#requireresolverequest-options)
+
+> That symbolic link in Lerna is for the convenient development mode
+
+```js
+// way 1 to serve react assets
+const packagePath = require.resolve('local-client/build/index.html');
+app.use(express.static(path.dirname(packagePath)));
+
+// way 2 to serve react assets
+app.use(
+  createProxyMiddleware({
+    target: 'http://localhost:3000',
+    ws: true,
+    logLevel: 'silent',
+  })
+);
+```
 
 </details>
