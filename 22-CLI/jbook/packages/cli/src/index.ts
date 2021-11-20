@@ -1,3 +1,10 @@
-import serve from 'local-api';
+import { program } from 'commander';
+import { serveCommand } from './comannds/serve';
 
-serve();
+program.addCommand(serveCommand);
+
+// program
+//   .addCommand(serveCommand)
+//   .addCommand(loginCommand); // It can be added like this
+
+program.parse(process.argv);

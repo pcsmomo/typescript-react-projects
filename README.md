@@ -1154,6 +1154,23 @@ node test.js --port 3050 mynotes.js
 
 npm commander can solve the problem!
 
-[commander.js - npm](https://www.npmjs.com/package/commander)
+[commander.js](https://github.com/tj/commander.js)
+
+### 269. Using Commander to Build a CLI
+
+```sh
+# install @types/node package
+lerna add @types/node --dev --scope=cli
+
+# compile and execute
+# jbook/packages/cli
+tsc
+node dist/index.js serve
+# Getting ready to serve a file
+
+node dist --help
+# Commands:
+#   serve           Open a file for editing
+```
 
 </details>
