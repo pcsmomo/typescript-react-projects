@@ -1232,4 +1232,17 @@ lerna add @types/cors --dev --scope=local-api
 lerna add http-proxy-middleware --scope=local-api
 ```
 
+### 275. Adding Dependencies and Running Express
+
+We will do error handling in cli, not in local-api
+
+### 277. Wrapping Express Listen with a Promise
+
+```js
+// it is a nice pattern to use
+return new Promise<void>((resolve, reject) => {
+  app.listen(port, resolve).on('error', reject);
+});
+```
+
 </details>
