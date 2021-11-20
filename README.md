@@ -1245,4 +1245,15 @@ return new Promise<void>((resolve, reject) => {
 });
 ```
 
+### 280. Connecting the Proxy
+
+```sh
+# /jbook  : run all packages including local-client(react app) localhost:3000
+npm start
+# /jbook/packages/cli/dist
+node index.js serve
+```
+
+we can navigate http://localhost:4005
+
 </details>
