@@ -1209,4 +1209,13 @@ node index.js serve -p 4000
 # notebook.js { port: '4000' }
 ```
 
+### 273. Calculating File Paths
+
+```js
+process.cwd(); // Current Working Directory
+path.dirname();
+path.basename();
+path.join();
+```
+
 </details>
