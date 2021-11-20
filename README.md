@@ -1256,4 +1256,25 @@ node index.js serve
 
 we can navigate http://localhost:4005
 
+### 281. Building a Production Bundle
+
+```sh
+# /jbook/packages/local-client
+npm run build
+```
+
+### 282. Understanding Package Links
+
+1. Change name from 'jbook' to 'local-client' in package.json
+   - lerna scope is coming from "name" in package.json
+   - `"name": "local-client"`
+2. `app.use(express.static('../../local-client/build'));`
+   - when navigating `localhost:4005` we can see the app!
+   - But this is not going to work when we deploy our app to npm registry
+   - Because the path would not be the same so
+3. Solution? set local-client to a depency of local-api
+   - ```sh
+     lerna add local-client --scope=local-api
+     ```
+
 </details>
