@@ -1173,4 +1173,40 @@ node dist --help
 #   serve           Open a file for editing
 ```
 
+### 270. Specifying Command Line Options
+
+#### Possible options
+
+```sh
+jbook serve
+jbook serve book.js
+jbook serve --port 4000
+jbook serve book.js --port 4000
+jbook serve -p 4000
+jbook serve book.js -p 40000
+```
+
+#### in Commander.js
+
+- `.command('serve [filename]')`: [] is optional
+- `.option('-p, --port <number>', 'port to run server on', '4005')`: <> is required
+
+```sh
+# jbook/packages/cli/dist
+node index.js serve --help
+
+node index.js serve
+# notebook.js { port: '4005' }
+node index.js serve book.js
+# book.js { port: '4005' }
+node index.js serve book.js --port 5000
+# book.js { port: '5000' }
+node index.js serve book.js -p 5000
+# book.js { port: '5000' }
+node index.js serve -p 5000 book.js
+# book.js { port: '5000' }
+node index.js serve -p 4000
+# notebook.js { port: '4000' }
+```
+
 </details>
