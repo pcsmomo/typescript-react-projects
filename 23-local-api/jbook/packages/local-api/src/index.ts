@@ -6,8 +6,4 @@ export const serve = (port: number, filename: string, dir: string) => {
   return new Promise<void>((resolve, reject) => {
     app.listen(port, resolve).on('error', reject);
   });
-
-  // app.listen(port, () => {
-  //   console.log('Listening on port', port);
-  // });
 };
