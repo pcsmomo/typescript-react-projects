@@ -1124,6 +1124,9 @@ To install packages
 - jbook/packages/local-client: `npm install`
 - jbook: `npm start`
 
+-> `npm run installAll`
+-> `npm start`
+
 ### 268. Reading Command Line Arguments
 
 ```sh
