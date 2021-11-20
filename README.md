@@ -1220,6 +1220,16 @@ path.join();
 
 ## Section 23: Adding a Local-Only API
 
-### 274. The Local API
+### 275. Adding Dependencies and Running Express
+
+> learna can install one package at one time
+
+```sh
+lerna add express --scope=local-api
+lerna add @types/express --dev --scope=local-api
+lerna add cors --scope=local-api
+lerna add @types/cors --dev --scope=local-api
+lerna add http-proxy-middleware --scope=local-api
+```
 
 </details>
