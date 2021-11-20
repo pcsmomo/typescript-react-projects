@@ -1218,4 +1218,8 @@ path.basename();
 path.join();
 ```
 
+## Section 23: Adding a Local-Only API
+
+### 274. The Local API
+
 </details>
