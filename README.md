@@ -1307,4 +1307,13 @@ app.use(
 );
 ```
 
+### 288. Writing Cells to a File
+
+[fs Promises API](https://nodejs.org/dist/latest-v10.x/docs/api/fs.html#fs_fs_promises_api)
+
+```js
+// regular fs is all call back functions
+import fs from 'fs/promises';
+```
+
 </details>
