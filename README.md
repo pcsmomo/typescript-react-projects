@@ -13,7 +13,14 @@ React and Typescript: Build a Portfolio Project by Stephen Grider
    - react-17.0.2-package: https://registry.npmjs.org/react/-/react-17.0.2.tgz
 5. 10-untrusted-code-execution
    - jbook: extended from last lecture
-6. After that, all directories have jbook copied from the previous section
+6. After that, all directories have jbook copied from the previous section until 21-path-Lerna
+7. 21-path-Lerna
+   - jbook
+     - packages
+       - cli
+       - local-api
+       - local-client: the previous jbook react app is here
+8. After that, all directories have jbook copied from the previous section
 
 # Details
 
@@ -1112,7 +1119,7 @@ npm start
 {
   "start": "tsc --watch --preserveWatchOutput"
 }
-// without --preserveWatchOutput, whenever typescript changes, all log messages will refreshed
+// without --preserveWatchOutput, whenever typescript changes, all log messages will be refreshed
 ```
 
 ## Section 22: Creating the CLI
