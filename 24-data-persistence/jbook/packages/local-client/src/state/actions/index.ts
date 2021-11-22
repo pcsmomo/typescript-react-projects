@@ -60,7 +60,7 @@ export interface FetchCellsCompleteAction {
 
 export interface FetchCellsErrorAction {
   type: ActionType.FETCH_CELLS_ERROR;
-  paylaod: string;
+  payload: string;
 }
 
 export type Action =

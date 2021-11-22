@@ -1,3 +1,5 @@
+import { Dispatch } from 'redux';
+import axios from 'axios';
 import { ActionType } from '../action-types';
 import {
   UpdateCellAction,
@@ -5,8 +7,9 @@ import {
   MoveCellAction,
   InsertCellAfterAction,
   Direction,
+  Action,
 } from '../actions';
-import { CellTypes } from '../cell';
+import { Cell, CellTypes } from '../cell';
 
 export const updateCell = (id: string, content: string): UpdateCellAction => {
   return {
@@ -45,5 +48,22 @@ export const insertCellAfter = (
       id,
       type: cellType,
     },
+  };
+};
+
+export const fetchCells = () => {
+  return async (dispatch: Dispatch<Action>) => {
+    dispatch({ type: ActionType.FETCH_CELLS });
+
+    try {
+      const { data }: { data: Cell[] } = await axios.get('/cells');
+
+      dispatch({ type: ActionType.FETCH_CELLS_COMPLETE, payload: data });
+    } catch (err: any) {
+      dispatch({
+        type: ActionType.FETCH_CELLS_ERROR,
+        payload: err.message,
+      });
+    }
   };
 };
