@@ -1330,4 +1330,17 @@ state.data = action.payload.reduce((acc, cell) => {
 // trick 2. CellsState['data']
 ```
 
+### 295. Saving a List of Cells
+
+To get all states in redux thunk!!
+
+```js
+// local-client/src/state/reducers/cellsReducer.ts
+return async (dispatch: Dispatch<Action>, getState: () => RootState) => {
+  const {
+    cells: { data, order },
+  } = getState();
+};
+```
+
 </details>
