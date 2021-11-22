@@ -10,7 +10,7 @@ import {
   Action,
 } from '../actions';
 import { Cell, CellTypes } from '../cell';
-import { RootState } from '..';
+import { RootState } from '../reducers';
 
 export const updateCell = (id: string, content: string): UpdateCellAction => {
   return {

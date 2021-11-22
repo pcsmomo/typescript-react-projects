@@ -1349,4 +1349,19 @@ return async (dispatch: Dispatch<Action>, getState: () => RootState) => {
 2. cli/dist : `node index.js serve`
 3. navigate `http://localhost:4005` not 3000
 
+```js
+// It is actually a middleware pattern?
+export const persistMiddleware = ({
+  dispatch,
+  getState,
+}: {
+  dispatch: Dispatch<Action>,
+  getState: () => RootState,
+}) => {};
+
+// it looks a little bit confusing,
+// but it's becuase we wired up saveCells() with redux thunk
+saveCells()(dispatch, getState);
+```
+
 </details>
