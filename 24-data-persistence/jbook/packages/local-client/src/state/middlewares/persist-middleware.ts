@@ -15,6 +15,8 @@ export const persistMiddleware = ({
   dispatch: Dispatch<Action>;
   getState: () => RootState;
 }) => {
+  let timer: any;
+
   // next: callback function
   return (next: (action: Action) => void) => {
     return (action: Action) => {
@@ -28,9 +30,14 @@ export const persistMiddleware = ({
           ActionType.DELETE_CELL,
         ].includes(action.type)
       ) {
-        // it looks a little confusing,
-        // but it's becuase we wired up saveCells() with redux thunk
-        saveCells()(dispatch, getState);
+        if (timer) {
+          clearTimeout(timer);
+        }
+        timer = setTimeout(() => {
+          // it looks a little confusing,
+          // but it's becuase we wired up saveCells() with redux thunk
+          saveCells()(dispatch, getState);
+        }, 250);
       }
     };
   };
