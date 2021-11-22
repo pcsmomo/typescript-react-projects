@@ -13,6 +13,7 @@ export const createCellsRouter = (filename: string, dir: string) => {
   router.use(express.json());
 
   const fullPath = path.join(dir, filename);
+  console.log(`notebook file full path: ${fullPath}`);
 
   router.get('/cells', async (req, res) => {
     try {
