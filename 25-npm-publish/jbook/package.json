@@ -1,0 +1,11 @@
+{
+  "name": "root",
+  "private": true,
+  "devDependencies": {
+    "lerna": "^4.0.0"
+  },
+  "scripts": {
+    "start": "lerna run start --parallel",
+    "installAll": "npm install --prefix packages/local-client && cd packages/local-api && lerna bootstrap && tsc && cd .. && cd cli && lerna bootstrap && tsc"
+  }
+}
