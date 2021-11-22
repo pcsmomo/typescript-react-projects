@@ -1316,4 +1316,18 @@ app.use(
 import fs from 'fs/promises';
 ```
 
+## Section 24: Data Persistence
+
+### 294. Handling Fetch Cell Types
+
+```js
+// local-client/src/state/reducers/cellsReducer.ts
+// trick 1. using reduce
+state.data = action.payload.reduce((acc, cell) => {
+  acc[cell.id] = cell;
+  return acc;
+}, {} as CellsState['data']);
+// trick 2. CellsState['data']
+```
+
 </details>
