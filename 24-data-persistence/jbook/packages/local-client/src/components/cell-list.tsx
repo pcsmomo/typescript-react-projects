@@ -15,16 +15,18 @@ const CellList: React.FC = () => {
     order.map((id) => data[id])
   );
 
-  const { fetchCells, saveCells } = useActions();
+  const { fetchCells } = useActions();
 
   useEffect(() => {
     fetchCells();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  useEffect(() => {
-    saveCells();
-  }, [JSON.stringify(cells)]);
+  // It works in a hacky way,
+  // but we will build saveCellsMiddleware for a better solution
+  // useEffect(() => {
+  //   saveCells();
+  // }, [JSON.stringify(cells)]);
 
   const renderedCells = cells.map((cell) => (
     <Fragment key={cell.id}>
