@@ -1343,4 +1343,10 @@ return async (dispatch: Dispatch<Action>, getState: () => RootState) => {
 };
 ```
 
+### 296. When to Call Fetch?
+
+1. jbook : `npm start`
+2. cli/dist : `node index.js serve`
+3. navigate `http://localhost:4005` not 3000
+
 </details>
