@@ -1424,6 +1424,8 @@ npm run build
 
 ### 306. Publishing to NPM
 
+Create a npmjs account
+
 ```sh
 # Publish!!
 npm install
@@ -1457,5 +1459,7 @@ npm publish
 # Install and run!!
 npx tiny-npm-deploy-noah
 ```
+
+Create a npmjs organization
 
 </details>
