@@ -1422,4 +1422,40 @@ npm run build
 
 (Created a new directory to use its own git repositorys)
 
+### 306. Publishing to NPM
+
+```sh
+# Publish!!
+npm install
+npm login
+npm publish
+# > tiny-npm-deploy-noah@1.0.0 prepublishOnly
+# > npm run build
+
+# > tiny-npm-deploy-noah@1.0.0 build
+# > tsc
+
+# npm notice
+# npm notice 📦  tiny-npm-deploy-noah@1.0.0
+# npm notice === Tarball Contents ===
+# npm notice 31B  dist/index.d.ts
+# npm notice 464B dist/index.js
+# npm notice 477B package.json
+# npm notice === Tarball Details ===
+# npm notice name:          tiny-npm-deploy-noah
+# npm notice version:       1.0.0
+# npm notice filename:      tiny-npm-deploy-noah-1.0.0.tgz
+# npm notice package size:  647 B
+# npm notice unpacked size: 972 B
+# npm notice shasum:        12afeffd0f25e57b9238f758b035b0fa282036cb
+# npm notice integrity:     sha512-HTOtTX6j1MIz8[...]z1PwCoIH+03Lw==
+# npm notice total files:   3
+# npm notice
+```
+
+```sh
+# Install and run!!
+npx tiny-npm-deploy-noah
+```
+
 </details>
