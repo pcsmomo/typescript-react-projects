@@ -1468,18 +1468,6 @@ Create a npmjs organization : `jsnote-noah`
    - `"name": "jsnote-noah/cli"`
    - `"name": "@jsnote-noah/local-api"`
    - `"name": "jsnote-noah/local-client"`
-2. Specify whici files should be sent to NPM when we publish
-   - ``
-3. Split our 'dependencies' and 'devDependencies'
-   - ``
-4. Set our package to be publicly accessible
-   - ``
-5. if building a CLI, configure the file to run
-   - ``
-6. Add a 'prePublish' script
-   - ``
-7. Commit to git
-8. Run 'npm publish'!
 
 ### 309. Refactoring Package Names
 
@@ -1487,5 +1475,18 @@ Create a npmjs organization : `jsnote-noah`
 # Install packages
 lerna bootstrap
 ```
+
+### 310. Auditing Dev Dependencies
+
+2. Specify whici files should be sent to NPM when we publish
+   - `"files": ["dist"]` : cli
+   - `"files": ["dist"]` : local-api
+   - `"files": ["build"]` : local-client
+3. Split our 'dependencies' and 'devDependencies'
+   - "dependencies" -> "devDependencies" : local-client
+   - We only need built react app in "build"
+   - so we don't need any dependencies from local-client
+4. Set our package to be publicly accessible
+   - `"publishConfig": { "access": "public" },`
 
 </details>
