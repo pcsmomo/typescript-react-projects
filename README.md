@@ -1384,4 +1384,17 @@ npm install --save-dev @types/express
 tsc --init
 ```
 
+### 303. A Touch More Setup
+
+```json
+{
+  "declaration": true /* Generate .d.ts files from TypeScript and JavaScript files in your project. */,
+  "outDir": "./dist" /* Specify an output folder for all emitted files. */
+}
+```
+
+```sh
+npm run build
+```
+
 </details>
