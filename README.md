@@ -1410,8 +1410,16 @@ npm run build
 4. Set our package to be publicly accessible
    - `"publishConfig": { "access": "public" },`
 5. if building a CLI, configure the file to run
+   - `"bin": "dist/index.js",`
+   ```js
+   <!-- index.ts -->
+   #!/usr/bin/env node
+   ```
 6. Add a 'prePublish' script
+   - `"prepublishOnly": "npm run build"`
 7. Commit to git
 8. Run 'npm publish'!
+
+(Created a new directory to use its own git repositorys)
 
 </details>
