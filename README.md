@@ -1379,8 +1379,8 @@ Create a new project `tiny-npm-deploy` apart from `jbook`
 mkdir tiny-npm-deploy
 cd tiny-npm-deploy
 npm init -y
-npm install --save typescript express
-npm install --save-dev @types/express
+npm install --save express
+npm install --save-dev typescript @types/express
 tsc --init
 ```
 
@@ -1396,5 +1396,22 @@ tsc --init
 ```sh
 npm run build
 ```
+
+### 304. Getting Ready to Publish
+
+<!-- package.json -->
+
+1. Make sure our package name is unique
+   - `"name": "tiny-npm-deploy-noah"`
+2. Specify whici files should be sent to NPM when we publish
+   - `"files": ["dist"]`
+3. Split our 'dependencies' and 'devDependencies'
+   - `"dependencies": { "express": "^4.17.1" },`
+4. Set our package to be publicly accessible
+   - `"publishConfig": { "access": "public" },`
+5. if building a CLI, configure the file to run
+6. Add a 'prePublish' script
+7. Commit to git
+8. Run 'npm publish'!
 
 </details>
