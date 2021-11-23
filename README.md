@@ -1460,6 +1460,32 @@ npm publish
 npx tiny-npm-deploy-noah
 ```
 
-Create a npmjs organization
+### 308. Declaring Scoped Packages
+
+Create a npmjs organization : `jsnote-noah`
+
+1. Make sure our package name is unique
+   - `"name": "jsnote-noah/cli"`
+   - `"name": "@jsnote-noah/local-api"`
+   - `"name": "jsnote-noah/local-client"`
+2. Specify whici files should be sent to NPM when we publish
+   - ``
+3. Split our 'dependencies' and 'devDependencies'
+   - ``
+4. Set our package to be publicly accessible
+   - ``
+5. if building a CLI, configure the file to run
+   - ``
+6. Add a 'prePublish' script
+   - ``
+7. Commit to git
+8. Run 'npm publish'!
+
+### 309. Refactoring Package Names
+
+```sh
+# Install packages
+lerna bootstrap
+```
 
 </details>

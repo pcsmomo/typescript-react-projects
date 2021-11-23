@@ -24,7 +24,9 @@ export const serve = (
     );
   } else {
     // way 1 to serve react assets (production for user)
-    const packagePath = require.resolve('local-client/build/index.html');
+    const packagePath = require.resolve(
+      '@jsnote-noah/local-client/build/index.html'
+    );
     app.use(express.static(path.dirname(packagePath)));
   }
 

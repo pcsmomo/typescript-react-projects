@@ -1,6 +1,6 @@
 import path from 'path';
 import { Command } from 'commander';
-import { serve } from 'local-api/dist';
+import { serve } from '@jsnote-noah/local-api';
 
 const isProduction = process.env.NODE_ENV === 'production';
 

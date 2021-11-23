@@ -10,7 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "commander": "^8.3.0",
-    "local-api": "^1.0.0"
+    "@jsnote-noah/local-api": "^1.0.0"
   },
   "devDependencies": {
     "@types/node": "^16.11.9",
