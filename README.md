@@ -20,7 +20,10 @@ React and Typescript: Build a Portfolio Project by Stephen Grider
        - cli
        - local-api
        - local-client: the previous jbook react app is here
-8. After that, all directories have jbook copied from the previous section
+8. After that, all directories have jbook copied from the previous section until 25-npm-publish
+9. 25-npm-publish
+   - tiny-npm-deploy
+   - jbook
 
 # Details
 
@@ -1362,6 +1365,23 @@ export const persistMiddleware = ({
 // it looks a little bit confusing,
 // but it's becuase we wired up saveCells() with redux thunk
 saveCells()(dispatch, getState);
+```
+
+## Section 25: Publishing to NPM
+
+### 301. The Path to NPM Publishing
+
+Create a new project `tiny-npm-deploy` apart from `jbook`
+
+### 302. Bootstrapping the Project
+
+```sh
+mkdir tiny-npm-deploy
+cd tiny-npm-deploy
+npm init -y
+npm install --save typescript express
+npm install --save-dev @types/express
+tsc --init
 ```
 
 </details>
