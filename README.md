@@ -1489,4 +1489,18 @@ lerna bootstrap
 4. Set our package to be publicly accessible
    - `"publishConfig": { "access": "public" },`
 
+### 311. Adding Build Scripts
+
+5. if building a CLI, configure the file to run
+   - `"bin": "dist/index.js",` : cli
+   ```js
+   <!-- index.ts -->
+   #!/usr/bin/env node
+   ```
+6. Add a 'prePublishOnly' script
+   - `"prepublishOnly": "tsc"` : cli
+   - `"prepublishOnly": "tsc"` : local-api
+   - `"prepublishOnly": "npm run build"` : local-client
+     - `@uiw/react-md-editor` take some time to build (just reminding)
+
 </details>
