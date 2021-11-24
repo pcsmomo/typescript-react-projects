@@ -1420,8 +1420,6 @@ npm run build
 7. Commit to git
 8. Run 'npm publish'!
 
-(Created a new directory to use its own git repositorys)
-
 ### 306. Publishing to NPM
 
 Create a npmjs account
@@ -1510,5 +1508,9 @@ lerna bootstrap
 lerna add esbuild@0.13.12 --exact --dev --scope=jsnote-noah
 # lerna add esbuild --dev --scope=jsnote-noah
 ```
+
+### 314. Creating a Repository
+
+Created a new directory jbook to use its own git repository
 
 </details>
