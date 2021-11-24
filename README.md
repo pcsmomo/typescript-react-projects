@@ -1554,6 +1554,25 @@ learna publish --no-push
 ```
 
 - Choose Major (1.0.0)
-- And it will take a few minutes
+- And it will take a few minutesnpx
+
+### 316. Does it Work?
+
+```sh
+npx jsnote-noah serve
+# And navigate localhost:4005
+```
+
+```js
+// Sample react code to test
+import React from 'react';
+import ReactDOM from 'react-dom';
+
+const App = () => {
+  return <h1>Yay</h1>;
+};
+
+ReactDOM.render(<App />, document.querySelector('#root'));
+```
 
 </details>
