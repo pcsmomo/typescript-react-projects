@@ -1518,8 +1518,42 @@ Created a new directory jbook to use its own git repository
 
 ```sh
 learna publish --no-push
+
+# lerna notice cli v4.0.0
+# lerna info current version 0.0.0
+# lerna info Assuming all packages changed
+# ? Select a new version (currently 0.0.0) Major (1.0.0)
+
+# Changes:
+#  - jsnote-noah: 1.0.0 => 1.0.0
+#  - @jsnote-noah/local-api: 1.0.0 => 1.0.0
+#  - @jsnote-noah/local-client: 0.1.0 => 1.0.0
+
+# ? Are you sure you want to publish these packages? Yes
+# lerna info execute Skipping git push
+# lerna info execute Skipping releases
+# lerna info publish Publishing packages to npm...
+# lerna info Verifying npm credentials
+# lerna http fetch GET 200 https://registry.npmjs.org/-/npm/v1/user 2741ms
+# lerna http fetch GET 200 https://registry.npmjs.org/-/org/dongwoo333/package?format=cli 352ms (cache miss)
+# lerna info Checking two-factor auth mode
+# lerna http fetch GET 200 https://registry.npmjs.org/-/npm/v1/user 847ms
+# lerna WARN ENOLICENSE Packages jsnote-noah, @jsnote-noah/local-api, and @jsnote-noah/local-client are missing a license.
+# lerna WARN ENOLICENSE One way to fix this is to add a LICENSE.md file to the root of this repository.
+# lerna WARN ENOLICENSE See https://choosealicense.com for additional guidance.
+# lerna info lifecycle @jsnote-noah/local-client@1.0.0~prepublishOnly: @jsnote-noah/local-client@1.0.0
+
+# > @jsnote-noah/local-client@1.0.0 prepublishOnly /Users/noah/Documents/Study/Study_codes/udemy/typescript-react-projects/typescript-react-projects-git/25-npm-publish/jbook/packages/local-client
+# > npm run build
+
+
+# > @jsnote-noah/local-client@1.0.0 build
+# > react-scripts build
+
+# Creating an optimized production build...
 ```
 
-Choose Major (1.0.0)
+- Choose Major (1.0.0)
+- And it will take a few minutes
 
 </details>
