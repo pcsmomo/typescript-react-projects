@@ -24,6 +24,7 @@ React and Typescript: Build a Portfolio Project by Stephen Grider
 9. 25-npm-publish
    - tiny-npm-deploy
    - jbook
+   <!-- - jbook : at the end of the section, jbook will have its own repo to publich npm -->
 
 # Details
 
@@ -1512,5 +1513,13 @@ lerna add esbuild@0.13.12 --exact --dev --scope=jsnote-noah
 ### 314. Creating a Repository
 
 Created a new directory jbook to use its own git repository
+
+### 315. Publishing with Lerna
+
+```sh
+learna publish --no-push
+```
+
+Choose Major (1.0.0)
 
 </details>
