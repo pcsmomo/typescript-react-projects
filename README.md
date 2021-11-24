@@ -1503,4 +1503,12 @@ lerna bootstrap
    - `"prepublishOnly": "npm run build"` : local-client
      - `@uiw/react-md-editor` take some time to build (just reminding)
 
+### 313. Running ESBuild
+
+```sh
+# ./jbook/packages/cli
+lerna add esbuild@0.13.12 --exact --dev --scope=jsnote-noah
+# lerna add esbuild --dev --scope=jsnote-noah
+```
+
 </details>
