@@ -1559,6 +1559,7 @@ learna publish --no-push
 ### 316. Does it Work?
 
 ```sh
+# Execute jsnote-noah from npm
 npx jsnote-noah serve
 # And navigate localhost:4005
 ```
@@ -1574,5 +1575,16 @@ const App = () => {
 
 ReactDOM.render(<App />, document.querySelector('#root'));
 ```
+
+### 317. Next Steps
+
+```sh
+npx jsnote-noah@latest serve
+```
+
+1. Make a change to the project, then republish with Lerna.
+2. Can we write cells into a file in a more user-friendly format?
+3. The code editor height is fixed. It would be a lot nicer to see its height adjust with the amount of code in it.
+4. The app is empty when a user first opens a new notebook up. Try adding in some default notes.
 
 </details>
